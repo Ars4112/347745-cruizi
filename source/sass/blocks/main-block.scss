@@ -1,0 +1,60 @@
+.main-block {
+  background-image: url("../img/main-block-desktop.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  min-height: 920px;
+  display: flex;
+  align-items: center;
+
+  @media (max-width: $vp-1024) {
+    min-height: 630px;
+  }
+
+  @media (max-width: $vp-768) {
+    min-height: 500px;
+  }
+}
+
+.main-block__container {
+  width: 100%;
+  max-width: 1920px;
+  margin: 0 auto;
+  padding: 0 198px;
+
+  @media (max-width: $vp-1024) {
+    padding: 0 45px;
+  }
+}
+
+.main-block__title {
+  @include fonts(700, 54px, 66px);
+  margin: 0;
+  color: #f9fbfd;
+  text-shadow: 0 4px 4px #00000040;
+
+  @media (max-width: $vp-1024) {
+    @include fonts(700, 50px, 61px);
+  }
+
+  @media (max-width: $vp-768) {
+    @include fonts(700, 36px, 45px);
+  }
+}
+
+.main-block__text {
+  @include fonts(400, 20px, 24px);
+  margin: 0;
+  margin-top: 30px;
+  color: #f9fbfd;
+  text-shadow: 0 4px 4px #00000040;
+
+  @media (max-width: $vp-1024) {
+    @include fonts(400, 18px, 22px);
+  }
+
+  @media (max-width: $vp-768) {
+    @include fonts(400, 16px, 22px);
+  }
+}
