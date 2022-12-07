@@ -9,19 +9,18 @@
     <link rel="stylesheet" href="css/style.min.css" />
   </head>
   <body>
-    <header class="header">
-      <nav class="header__nav">
-        <picture>
-          <svg
-            class="header__logo"
-            width="70"
-            height="38"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 72 40"
-          >
-            <use href="img/sprite/sprite.svg#logo"></use>
-          </svg>
-        </picture>
+    <header class="header header--position">
+      <nav class="header__nav header__nav--hidden">
+        <svg
+          class="header__logo"
+          width="70"
+          height="38"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 72 40"
+        >
+          <use href="img/sprite/sprite.svg#logo"></use>
+        </svg>
+
         <ul class="header__list">
           <li class="header__item">
             <a class="header__link" href="#">Преимущества</a>
@@ -36,14 +35,48 @@
             <a class="header__link" href="#">Контакты</a>
           </li>
         </ul>
-        <button class="header__button header__button--closed"><span class="visually-hidden">Открыть меню</span></button>
+        <button class="header__button">
+          <span class="visually-hidden">Открыть меню</span>
+        </button>
       </nav>
+      <div class="header__menu menu-mobile menu-mobile--visible">
+        <nav class="menu-mobile__nav ">
+          <svg
+            class="menu-mobile__logo"
+            width="70"
+            height="38"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 72 40"
+          >
+            <use href="img/sprite/sprite.svg#logo"></use>
+          </svg>
+          <ul class="menu-mobile__list">
+            <li class="menu-mobile__item">
+              <a class="menu-mobile__link" href="#">Преимущества</a>
+            </li>
+            <li class="menu-mobile__item">
+              <a class="menu-mobile__link" href="#">Направления</a>
+            </li>
+            <li class="menu-mobile__item">
+              <a class="menu-mobile__link" href="#">Ближайшие круизы</a>
+            </li>
+            <li class="menu-mobile__item">
+              <a class="menu-mobile__link" href="#">Контакты</a>
+            </li>
+          </ul>
+          <button class="menu-mobile__button menu-mobile__button--hidden">
+            <span class="visually-hidden">Закрыть меню</span>
+          </button>
+        </nav>
+      </div>
     </header>
     <main>
       <section class="main-block">
         <div class="main-block__container">
           <h1 class="main-block__title">Круизы в&nbsp;Антарктику</h1>
-          <p class="main-block__text">Волшебный мир айсбергов и&nbsp;пингвинов</p>
+          <p class="main-block__text">
+            Волшебный мир айсбергов и&nbsp;пингвинов
+          </p>
         </div>
       </section>
     </main>
