@@ -541,6 +541,26 @@ body {
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
+  color: #011c40;
+}
+
+h2 {
+  font-family: "Montserrat", "Arial", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 28px;
+  line-height: 42px;
+  text-align: center;
+  margin: 0;
+}
+
+h3 {
+  font-family: "Montserrat", "Arial", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 27px;
+  margin: 0;
 }
 
 .wrapper {
@@ -770,9 +790,9 @@ body {
 }
 
 .header__nav {
+  padding: 35px 103px;
   max-width: 1920px;
   margin: 0 auto;
-  padding: 35px 103px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -785,63 +805,10 @@ body {
   gap: 60px;
 }
 
-.header__logo {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  color: #f9fbfd;
-}
-
-.header__list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: end;
-  -ms-flex-pack: end;
-  justify-content: end;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  gap: 10px 33px;
-}
-
-.header__link {
-  font-family: "Montserrat", "Arial", sans-serif;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 20px;
-  padding: 5px 0;
-  color: #f9fbfd;
-}
-
-.header__link:hover {
-  opacity: 0.8;
-}
-
-.header__link:active {
-  opacity: 0.5;
-}
-
-.header__button {
-  display: none;
-}
-
 .main-block {
   background-image: url("../img/main-block-desktop.jpg");
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: bottom;
   background-size: cover;
   width: 100%;
   min-height: 920px;
@@ -930,7 +897,6 @@ body {
 .menu-mobile__list {
   list-style: none;
   margin: 0;
-  padding: 0;
   margin-top: 43px;
   padding: 0 10px;
   display: -webkit-box;
@@ -959,6 +925,183 @@ body {
 
 .menu-mobile--hidden {
   display: none;
+}
+
+.footer {
+  background: #011c40;
+}
+
+.footer .nav__link {
+  font-family: "Montserrat", "Arial", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.footer__wrapper {
+  padding: 50px;
+  max-width: 1160px;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.footer__nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 40px;
+}
+
+.footer__social-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (auto)[3];
+  grid-template-columns: repeat(3, auto);
+  gap: 10px 27px;
+}
+
+.footer__social-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.footer__social-link {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: #f9fbfd;
+}
+
+.footer__social-link:hover {
+  color: #c7dff7;
+}
+
+.footer__social-link:active {
+  color: #7cbbfa;
+}
+
+.nav__logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: #f9fbfd;
+  -ms-flex-item-align: start;
+  align-self: flex-start;
+}
+
+.nav__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(-webkit-min-content, auto))[4];
+  -ms-grid-columns: (minmax(min-content, auto))[4];
+  grid-template-columns: repeat(4, minmax(-webkit-min-content, auto));
+  grid-template-columns: repeat(4, minmax(min-content, auto));
+  gap: 10px 33px;
+}
+
+.nav__link {
+  font-family: "Montserrat", "Arial", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  padding: 5px 0;
+  color: #f9fbfd;
+}
+
+.nav__link:hover {
+  opacity: 0.8;
+}
+
+.nav__link:active {
+  opacity: 0.5;
+}
+
+.nav__button {
+  display: none;
+}
+
+.benefits {
+  background-image: url("../img/benefits-desktop.jpg");
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: cover;
+  width: 100%;
+}
+
+.benefits__wrapper {
+  width: 100%;
+  max-width: 1920px;
+  margin: 0 auto;
+  padding: 120px 103px;
+}
+
+.benefits__list {
+  list-style: none;
+  margin-top: 60px;
+  padding: 0;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(200px, 360px))[3];
+  grid-template-columns: repeat(3, minmax(200px, 360px));
+  gap: 40px;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.benefits__item {
+  padding: 50px 30px;
+  background: #f9fbfd;
+}
+
+.benefits__item-title {
+  margin-top: 25px;
+}
+
+.benefits__text {
+  font-family: "Montserrat", "Arial", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  margin: 0;
+  margin-top: 20px;
 }
 
 /* @mixin hover-focus {
@@ -1009,29 +1152,29 @@ body {
 }
 
 @media (max-width: 1024px) {
+  h2 {
+    font-family: "Montserrat", "Arial", sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 26px;
+    line-height: 39px;
+  }
+
+  h3 {
+    font-family: "Montserrat", "Arial", sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 25px;
+  }
+
   .header__nav {
     gap: 40px;
     padding: 30px 45px;
   }
 
-  .header__logo {
-    width: 38px;
-    height: 20px;
-  }
-
-  .header__list {
-    gap: 10px 23px;
-  }
-
-  .header__link {
-    font-family: "Montserrat", "Arial", sans-serif;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 17px;
-  }
-
   .main-block {
+    background-image: url("../img/main-block-tablet.jpg");
     min-height: 630px;
   }
 
@@ -1054,6 +1197,51 @@ body {
     font-size: 18px;
     line-height: 22px;
   }
+
+  .footer .nav__link {
+    font-family: "Montserrat", "Arial", sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 15px;
+  }
+
+  .footer__wrapper {
+    padding: 50px 45px;
+  }
+
+  .footer__nav {
+    gap: 25px;
+  }
+
+  .footer__social-list {
+    gap: 10px 23px;
+  }
+
+  .nav__logo {
+    width: 38px;
+    height: 20px;
+  }
+
+  .nav__list {
+    gap: 10px 23px;
+  }
+
+  .nav__link {
+    font-family: "Montserrat", "Arial", sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+  }
+
+  .benefits {
+    background-image: url("../img/benefits-tablet.jpg");
+  }
+
+  .benefits__wrapper {
+    padding: 100px 45px;
+  }
 }
 
 @media (max-width: 1023px) {
@@ -1063,60 +1251,24 @@ body {
 }
 
 @media (max-width: 768px) {
-  .header--position {
-    position: relative;
+  h2 {
+    font-family: "Montserrat", "Arial", sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 36px;
   }
 
   .header__nav {
     padding: 20px 15px;
   }
 
-  .header__logo {
-    width: 42px;
-    height: 22px;
-  }
-
-  .header__list {
-    display: none;
-  }
-
-  .header__link {
-    font-family: "Montserrat", "Arial", sans-serif;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 18px;
-    line-height: 22px;
-  }
-
-  .header__button {
-    display: block;
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 62px;
-    height: 62px;
-    border: none;
-    background: transparent;
-    cursor: pointer;
-  }
-
-  .header__button::before {
-    content: "";
-    position: absolute;
-    top: 24px;
-    right: 21px;
-    width: 24px;
-    height: 2px;
-    background: #f9fbfd;
-    -webkit-box-shadow: 0 6px 0 0 #f9fbfd, 0 12px 0 0 #f9fbfd;
-    box-shadow: 0 6px 0 0 #f9fbfd, 0 12px 0 0 #f9fbfd;
-  }
-
-  .header__nav--hidden {
-    display: none;
+  .header--position {
+    position: relative;
   }
 
   .main-block {
+    background-image: url("../img/main-block-mobile.jpg");
     min-height: 500px;
   }
 
@@ -1138,6 +1290,87 @@ body {
 
   .menu-mobile--visible {
     display: block;
+  }
+
+  .footer .nav__list {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    gap: 23px;
+  }
+
+  .footer__wrapper {
+    padding: 40px 15px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .footer__nav {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .nav__logo {
+    width: 42px;
+    height: 22px;
+  }
+
+  .nav__list {
+    display: none;
+  }
+
+  .nav__link {
+    font-family: "Montserrat", "Arial", sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+  }
+
+  .nav__button {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 62px;
+    height: 62px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+  }
+
+  .nav__button::before {
+    content: "";
+    position: absolute;
+    top: 24px;
+    right: 21px;
+    width: 24px;
+    height: 2px;
+    background: #f9fbfd;
+    -webkit-box-shadow: 0 6px 0 0 #f9fbfd, 0 12px 0 0 #f9fbfd;
+    box-shadow: 0 6px 0 0 #f9fbfd, 0 12px 0 0 #f9fbfd;
+  }
+
+  .nav--hidden {
+    display: none;
+  }
+
+  .benefits {
+    background-image: url("../img/benefits-mobile.jpg");
+  }
+
+  .benefits__wrapper {
+    padding: 65px 15px;
   }
 }
 

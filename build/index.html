@@ -10,9 +10,9 @@
   </head>
   <body>
     <header class="header header--position">
-      <nav class="header__nav header__nav--hidden">
+      <nav class="header__nav nav nav--hidden">
         <svg
-          class="header__logo"
+          class="nav__logo"
           width="70"
           height="38"
           xmlns="http://www.w3.org/2000/svg"
@@ -21,26 +21,26 @@
           <use href="img/sprite/sprite.svg#logo"></use>
         </svg>
 
-        <ul class="header__list">
-          <li class="header__item">
-            <a class="header__link" href="#">Преимущества</a>
+        <ul class="nav__list">
+          <li class="nav__item">
+            <a class="nav__link" href="#">Преимущества</a>
           </li>
-          <li class="header__item">
-            <a class="header__link" href="#">Направления</a>
+          <li class="nav__item">
+            <a class="nav__link" href="#">Направления</a>
           </li>
-          <li class="header__item">
-            <a class="header__link" href="#">Ближайшие круизы</a>
+          <li class="nav__item">
+            <a class="nav__link" href="#">Ближайшие круизы</a>
           </li>
-          <li class="header__item">
-            <a class="header__link" href="#">Контакты</a>
+          <li class="nav__item">
+            <a class="nav__link" href="#">Контакты</a>
           </li>
         </ul>
-        <button class="header__button">
+        <button class="nav__button">
           <span class="visually-hidden">Открыть меню</span>
         </button>
       </nav>
       <div class="header__menu menu-mobile menu-mobile--visible">
-        <nav class="menu-mobile__nav ">
+        <nav class="menu-mobile__nav">
           <svg
             class="menu-mobile__logo"
             width="70"
@@ -79,8 +79,135 @@
           </p>
         </div>
       </section>
+      <section class="benefits">
+        <div class="benefits__wrapper">
+          <h2 class="benefits__title">Преймущества</h2>
+          <ul class="benefits__list">
+            <li class="benefits__item">
+              <svg class="benefits__logo"
+                width="70"
+                height="38"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 72 40"
+              >
+                <use href="img/sprite/sprite.svg#benefits-1"></use>
+              </svg>
+              <h3 class="benefits__item-title">Небольшой круизный лайнер</h3>
+              <p class="benefits__text">
+                Круизный лайнер, рассчитанный всего лишь
+                на&nbsp;300&nbsp;гостей, поможет избежать шума и&nbsp;очередей
+                и&nbsp;даст возможность насладиться видами и&nbsp;природой.
+              </p>
+            </li>
+            <li class="benefits__item">
+              <svg class="benefits__logo"
+                width="70"
+                height="38"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 72 40"
+              >
+                <use href="img/sprite/sprite.svg#benefits-2"></use>
+              </svg>
+              <h3 class="benefits__item-title">Система все включено</h3>
+              <p class="benefits__text">
+                Все наши круизы работают по&nbsp;системе &laquo;Все
+                Включено&raquo;. Великолепные блюда и&nbsp;безлимитный бар
+                доступны для вас 24&nbsp;часа.
+              </p>
+            </li>
+            <li class="benefits__item">
+              <svg class="benefits__logo"
+                width="70"
+                height="38"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 72 40"
+              >
+                <use href="img/sprite/sprite.svg#benefits-3"></use>
+              </svg>
+              <h3 class="benefits__item-title">
+                Экскурсионные туры на&nbsp;Zodiac
+              </h3>
+              <p class="benefits__text">
+                Экскурсионные туры к&nbsp;берегам Антарктиды совершаются
+                на&nbsp;оборудованных лодках типа Zodiack c&nbsp;опытными
+                экскурсоводами.
+              </p>
+            </li>
+          </ul>
+        </div>
+      </section>
     </main>
-    <footer></footer>
+    <footer class="footer">
+      <div class="footer__wrapper">
+        <nav class="footer__nav nav">
+          <svg
+            class="nav__logo"
+            width="70"
+            height="38"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 72 40"
+          >
+            <use href="img/sprite/sprite.svg#logo"></use>
+          </svg>
+          <ul class="nav__list">
+            <li class="nav__item">
+              <a class="nav__link" href="#">Преимущества</a>
+            </li>
+            <li class="nav__item">
+              <a class="nav__link" href="#">Направления</a>
+            </li>
+            <li class="nav__item">
+              <a class="nav__link" href="#">Ближайшие круизы</a>
+            </li>
+            <li class="nav__item">
+              <a class="nav__link" href="#">Контакты</a>
+            </li>
+          </ul>
+        </nav>
+        <ul class="footer__social-list">
+          <li class="footer__social-item">
+            <a class="footer__social-link" href="#">
+              <span class="visually-hidden"></span>
+              <svg
+                class="footer__social-logo"
+                width="12"
+                height="20"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 14 22"
+              >
+                <use href="img/sprite/sprite.svg#odnoklassniki"></use>
+              </svg>
+            </a>
+          </li>
+          <li class="footer__social-item">
+            <a class="footer__social-link" href="#">
+              <span class="visually-hidden"></span>
+              <svg
+                width="20"
+                height="20"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 22 22"
+              >
+                <use href="img/sprite/sprite.svg#dzen"></use>
+              </svg>
+            </a>
+          </li>
+          <li class="footer__social-item">
+            <a class="footer__social-link" href="#">
+              <span class="visually-hidden"></span>
+              <svg
+                width="20"
+                height="20"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 22 22"
+              >
+                <use href="img/sprite/sprite.svg#reddit"></use>
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </footer>
 
     <!-- Модалки -->
     <!-- <div class="modal modal--preload" data-modal="feedback">

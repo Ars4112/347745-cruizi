@@ -1,5 +1,29 @@
 body {
   @include fonts(400, 16px, 24px);
+  color: #011c40;
+}
+
+h2 {
+  @include fonts(600, 28px, 42px);
+  text-align: center;
+  margin: 0;
+
+  @media (max-width: $vp-1024) {
+    @include fonts(600, 26px, 39px);
+  }
+
+  @media (max-width: $vp-768) {
+    @include fonts(600, 24px, 36px);
+  }
+}
+
+h3 {
+  @include fonts(500, 18px, 27px);
+  margin: 0;
+
+  @media (max-width: $vp-1024) {
+    @include fonts(500, 18px, 25px);
+  }
 }
 
 .wrapper {

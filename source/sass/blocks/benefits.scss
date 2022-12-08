@@ -1,0 +1,56 @@
+.benefits {
+  background-image: url("../img/benefits-desktop.jpg");
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: cover;
+  width: 100%;
+
+  @media (max-width: $vp-1024) {
+    background-image: url("../img/benefits-tablet.jpg");
+  }
+
+  @media (max-width: $vp-768) {
+    background-image: url("../img/benefits-mobile.jpg");
+  }
+}
+
+.benefits__wrapper {
+  width: 100%;
+  max-width: 1920px;
+  margin: 0 auto;
+  padding: 120px 103px;
+
+  @media (max-width: $vp-1024) {
+    padding: 100px 45px;
+  }
+
+  @media (max-width: $vp-768) {
+    padding: 65px 15px;
+  }
+}
+
+.benefits__list {
+  list-style: none;
+  // margin: 0 auto;
+  margin-top: 60px;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(200px, 360px));
+  gap: 40px;
+  justify-content: center;
+}
+
+.benefits__item {
+  padding: 50px 30px;
+  background: #f9fbfd;
+}
+
+.benefits__item-title {
+  margin-top: 25px;
+}
+
+.benefits__text {
+  @include fonts(400, 14px, 20px);
+  margin: 0;
+  margin-top: 20px;
+}
