@@ -1,0 +1,114 @@
+.booking {
+  background-image: url("../img/booking-desktop.jpg");
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: cover;
+
+  @media (min-resolution: 1dppx) {
+    background-image: url("../img/booking-desktop.webp");
+  }
+
+  @media (min-resolution: 2dppx) {
+    background-image: url("../img/booking-desktop@2x.jpg");
+  }
+
+  @media (min-resolution: 2dppx) {
+    background-image: url("../img/booking-desktop@2x.webp");
+  }
+
+  @media (max-width: $vp-1024) {
+    background-image: url("../img/booking-tablet.jpg");
+
+    @media (min-resolution: 1dppx) {
+      background-image: url("../img/booking-tablet.webp");
+    }
+
+    @media (min-resolution: 2dppx) {
+      background-image: url("../img/booking-tablet@2x.jpg");
+    }
+
+    @media (min-resolution: 2dppx) {
+      background-image: url("../img/booking-tablet@2x.webp");
+    }
+  }
+
+  @media (max-width: $vp-768) {
+    background-image: linear-gradient(#04182780),
+      url("../img/booking-mobile.jpg");
+
+    @media (min-resolution: 1dppx) {
+      background-image: linear-gradient(#04182780),
+        url("../img/booking-mobile.webp");
+    }
+
+    @media (min-resolution: 2dppx) {
+      background-image: linear-gradient(#04182780),
+        url("../img/booking-mobile@2x.jpg");
+    }
+
+    @media (min-resolution: 2dppx) {
+      background-image: linear-gradient(#04182780),
+        url("../img/booking-mobile@2x.webp");
+    }
+  }
+}
+
+.booking__wrapper {
+  padding: 50px;
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  justify-content: center;
+  gap: 144px;
+
+  @media (max-width: $vp-1024) {
+    padding: 100px 0;
+    grid-template-columns: auto;
+    gap: 60px;
+  }
+
+  @media (max-width: $vp-768) {
+    padding: 65px 0;
+    gap: 40px;
+  }
+}
+
+.booking__text-wrapper {
+  display: flex;
+  flex-direction: column;
+  // justify-content: center;
+  gap: 6px;
+  margin-top: 165px;
+
+  @media (max-width: $vp-1024) {
+    gap: 25px;
+  }
+}
+
+.booking__title {
+  @include fonts(700, 40px, 60px);
+  text-align: start;
+
+  @media (max-width: $vp-1024) {
+    @include fonts(700, 34px, 51px);
+    text-align: center;
+  }
+
+  @media (max-width: $vp-768) {
+    @include fonts(700, 24px, 31px);
+  }
+}
+
+.booking__text {
+  @include fonts(400, 17px, 27px);
+  max-width: 370px;
+  text-align: start;
+  margin: 0;
+
+  @media (max-width: $vp-1024) {
+    text-align: center;
+  }
+
+  @media (max-width: $vp-768) {
+    @include fonts(400, 16px, 25px);
+  }
+}

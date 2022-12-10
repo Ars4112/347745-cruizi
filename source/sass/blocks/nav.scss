@@ -22,7 +22,7 @@
   padding: 0;
   display: grid;
   grid-template-columns: repeat(4, minmax(min-content, auto));
-  gap: 10px 33px;
+  gap: 10px 30px;
 
   @media (max-width: $vp-1024) {
     gap: 10px 23px;

@@ -1,6 +1,6 @@
 let viewport = document.documentElement.clientWidth;
 
-if (viewport <= 767) {
+if (viewport <= 768) {
   const header = document.querySelector('.header');
   const headerNav = header.querySelector('.header__nav');
   const menuMobile = header.querySelector('.menu-mobile');

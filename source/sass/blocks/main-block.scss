@@ -4,7 +4,7 @@
   background-position: bottom;
   background-size: cover;
   width: 100%;
-  min-height: 920px;
+  min-height: 657px;
   display: flex;
   align-items: center;
 
@@ -21,12 +21,18 @@
 
 .main-block__container {
   width: 100%;
-  max-width: 1920px;
+  max-width: 1366px;
   margin: 0 auto;
   padding: 0 198px;
+  position: relative;
+  top: -12px;
 
   @media (max-width: $vp-1024) {
     padding: 0 45px;
+  }
+
+  @media (max-width: $vp-768) {
+    padding: 0 15px;
   }
 }
 
@@ -48,7 +54,7 @@
 .main-block__text {
   @include fonts(400, 20px, 24px);
   margin: 0;
-  margin-top: 30px;
+  margin-top: 14px;
   color: #f9fbfd;
   text-shadow: 0 4px 4px #00000040;
 
