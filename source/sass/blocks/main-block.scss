@@ -10,7 +10,7 @@
 
   @media (max-width: $vp-1024) {
     background-image: url("../img/main-block-tablet.jpg");
-    min-height: 630px;
+    min-height: 636px;
   }
 
   @media (max-width: $vp-768) {
@@ -20,7 +20,7 @@
 }
 
 .main-block__container {
-  width: 100%;
+  // width: 100%;
   max-width: 1366px;
   margin: 0 auto;
   padding: 0 198px;
@@ -29,10 +29,12 @@
 
   @media (max-width: $vp-1024) {
     padding: 0 45px;
+    top: -4px;
   }
 
   @media (max-width: $vp-768) {
     padding: 0 15px;
+    top: 0;
   }
 }
 
@@ -64,5 +66,7 @@
 
   @media (max-width: $vp-768) {
     @include fonts(400, 16px, 22px);
+    margin-top: 10px;
+    max-width: 220px;
   }
 }

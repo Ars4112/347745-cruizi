@@ -821,7 +821,6 @@ h3 {
 }
 
 .main-block__container {
-  width: 100%;
   max-width: 1366px;
   margin: 0 auto;
   padding: 0 198px;
@@ -921,6 +920,14 @@ h3 {
   line-height: 22px;
   padding: 5px;
   color: #011c40;
+}
+
+.menu-mobile__link:hover {
+  opacity: 0.8;
+}
+
+.menu-mobile__link:active {
+  font-size: 24px;
 }
 
 .menu-mobile--visible {
@@ -1096,7 +1103,7 @@ h3 {
 }
 
 .benefits__item-title {
-  margin-top: 5px;
+  margin-top: 3px;
 }
 
 .benefits__text {
@@ -1104,9 +1111,9 @@ h3 {
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
-  line-height: 20px;
+  line-height: 19px;
   margin: 0;
-  margin-top: 10px;
+  margin-top: 5px;
 }
 
 .travaling__wrapper {
@@ -1143,7 +1150,8 @@ h3 {
 .travaling__text {
   margin: 0;
   margin-top: 40px;
-  font-size: 16px;
+  font-weight: 400;
+  font-size: 15px;
   line-height: 24px;
 }
 
@@ -1168,6 +1176,7 @@ h3 {
   display: grid;
   -ms-grid-columns: (minmax(200px, 260px))[4];
   grid-template-columns: repeat(4, minmax(200px, 260px));
+  grid-auto-rows: minmax(386px, auto);
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
@@ -1178,8 +1187,8 @@ h3 {
   position: relative;
   padding: 35px 25px 77px;
   background: #011c40;
-  -webkit-box-shadow: 0px 4px 35px rgba(1, 28, 64, 0.15);
-  box-shadow: 0px 4px 35px rgba(1, 28, 64, 0.15);
+  -webkit-box-shadow: 0 4px 35px rgba(1, 28, 64, 0.1490196078);
+  box-shadow: 0 4px 35px rgba(1, 28, 64, 0.1490196078);
   color: #f9fbfd;
 }
 
@@ -1324,14 +1333,15 @@ h3 {
 
 .form {
   background: #011c40;
-  -webkit-box-shadow: 0px 4px 45px rgba(1, 28, 64, 0.15);
-  box-shadow: 0px 4px 45px rgba(1, 28, 64, 0.15);
+  -webkit-box-shadow: 0 4px 45px rgba(1, 28, 64, 0.1490196078);
+  box-shadow: 0 4px 45px rgba(1, 28, 64, 0.1490196078);
   width: 403px;
+  margin: 0 auto;
   color: #f9fbfd;
   padding: 50px;
 }
 
-.form__text {
+form .form__text {
   font-family: "Montserrat", "Arial", sans-serif;
   font-style: normal;
   font-weight: 500;
@@ -1355,9 +1365,34 @@ h3 {
 }
 
 .form__item input {
+  font-family: "Montserrat", "Arial", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 21px;
   width: 100%;
   padding: 11px 16px;
   border: none;
+}
+
+.form__item input ::-webkit-input-placeholder {
+  color: rgba(1, 28, 64, 0.7019607843);
+}
+
+.form__item input ::-moz-placeholder {
+  color: rgba(1, 28, 64, 0.7019607843);
+}
+
+.form__item input :-ms-input-placeholder {
+  color: rgba(1, 28, 64, 0.7019607843);
+}
+
+.form__item input ::-ms-input-placeholder {
+  color: rgba(1, 28, 64, 0.7019607843);
+}
+
+.form__item input ::placeholder {
+  color: rgba(1, 28, 64, 0.7019607843);
 }
 
 form > label {
@@ -1419,6 +1454,28 @@ form button {
   width: 100%;
   color: #011c40;
   cursor: pointer;
+}
+
+.form__item label {
+  position: relative;
+}
+
+.form__error {
+  color: #eb5a5a;
+  position: absolute;
+  top: 30px;
+  left: 0;
+}
+
+.form__error-checkbox {
+  color: #eb5a5a;
+  position: absolute;
+  top: 30px;
+  left: 0;
+}
+
+.form__message {
+  color: #f9fbfd;
 }
 
 /* @mixin hover-focus {
@@ -1492,11 +1549,12 @@ form button {
 
   .main-block {
     background-image: url("../img/main-block-tablet.jpg");
-    min-height: 630px;
+    min-height: 636px;
   }
 
   .main-block__container {
     padding: 0 45px;
+    top: -4px;
   }
 
   .main-block__title {
@@ -1557,7 +1615,7 @@ form button {
   }
 
   .benefits__wrapper {
-    padding: 100px 45px;
+    padding: 90px 45px;
   }
 
   .benefits__list {
@@ -1568,19 +1626,46 @@ form button {
     padding: 25px 20px;
   }
 
+  .benefits__item-title {
+    font-size: 17px;
+  }
+
+  .benefits__logo--first {
+    width: 21px;
+    height: 26px;
+  }
+
+  .benefits__logo--second {
+    width: 27px;
+    height: 26px;
+  }
+
+  .benefits__logo--third {
+    width: 36px;
+    height: 26px;
+  }
+
   .travaling__wrapper {
-    padding: 100px 45px;
+    padding: 90px 45px;
     -ms-grid-columns: (1fr)[2];
     grid-template-columns: repeat(2, 1fr);
     gap: 25px;
   }
 
+  .travaling__title {
+    font-size: 28px;
+  }
+
   .travaling__text {
-    margin-top: 30px;
+    margin-top: 15px;
+  }
+
+  .travaling__image {
+    margin-top: 15px;
   }
 
   .catalog__wrapper {
-    padding: 100px 60px;
+    padding: 90px 60px 100px;
   }
 
   .catalog__list {
@@ -1588,19 +1673,32 @@ form button {
     grid-template-columns: repeat(2, 309px);
   }
 
+  .catalog__item {
+    padding: 35px 35px 80px;
+  }
+
+  .catalog__button {
+    left: 35px;
+    right: 35px;
+  }
+
   .booking {
     background-image: url("../img/booking-tablet.jpg");
   }
 
   .booking__wrapper {
-    padding: 100px 0;
+    padding: 90px 0;
     -ms-grid-columns: auto;
     grid-template-columns: auto;
-    gap: 60px;
+    gap: 50px;
   }
 
   .booking__text-wrapper {
-    gap: 25px;
+    gap: 6px;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    margin-top: 0;
   }
 
   .booking__title {
@@ -1663,6 +1761,7 @@ form button {
 
   .main-block__container {
     padding: 0 15px;
+    top: 0;
   }
 
   .main-block__title {
@@ -1679,6 +1778,8 @@ form button {
     font-weight: 400;
     font-size: 16px;
     line-height: 22px;
+    margin-top: 10px;
+    max-width: 220px;
   }
 
   .menu-mobile--visible {
@@ -1734,7 +1835,7 @@ form button {
     display: block;
     position: absolute;
     top: 0;
-    right: 0;
+    right: -6px;
     width: 62px;
     height: 62px;
     border: none;
@@ -1763,13 +1864,28 @@ form button {
   }
 
   .benefits__wrapper {
-    padding: 65px 15px;
+    padding: 55px 15px 47px;
   }
 
   .benefits__list {
-    margin-top: 40px;
+    margin-top: 30px;
     -ms-grid-columns: (auto)[1];
     grid-template-columns: repeat(1, auto);
+    grid-auto-rows: minmax(250px, auto);
+    gap: 27px;
+  }
+
+  .benefits__item-title {
+    font-size: 18px;
+    margin-top: 15px;
+  }
+
+  .benefits__text {
+    font-family: "Montserrat", "Arial", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 20px;
   }
 
   .travaling__wrapper {
@@ -1778,18 +1894,28 @@ form button {
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     justify-content: center;
-    gap: 50px;
-    padding: 65px 15px;
+    gap: 42px;
+    padding: 55px 15px;
     padding-bottom: 85px;
   }
 
+  .travaling__title {
+    font-size: 24px;
+    max-width: 280px;
+  }
+
+  .travaling__image {
+    margin: 0;
+  }
+
   .catalog__wrapper {
-    padding: 65px 25px;
+    padding: 55px 25px 65px;
   }
 
   .catalog__list {
-    -ms-grid-columns: 270px;
-    grid-template-columns: 270px;
+    -ms-grid-columns: minmax(auto, 270px);
+    grid-template-columns: minmax(auto, 270px);
+    margin-top: 31px;
   }
 
   .booking {
@@ -1799,8 +1925,12 @@ form button {
   }
 
   .booking__wrapper {
-    padding: 65px 0;
-    gap: 40px;
+    padding: 58px 15px 66px;
+    gap: 33px;
+  }
+
+  .booking__text-wrapper {
+    gap: 13px;
   }
 
   .booking__title {
@@ -1816,7 +1946,37 @@ form button {
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
-    line-height: 25px;
+    line-height: 23px;
+  }
+
+  .form {
+    width: auto;
+    padding: 35px 30px 40px;
+    max-width: 350px;
+    margin: 0 auto;
+  }
+
+  form .form__text {
+    text-align: center;
+    display: block;
+    width: 100%;
+  }
+
+  .form__list {
+    gap: 20px;
+  }
+
+  form > label {
+    margin-top: 16px;
+    padding-left: 30px;
+  }
+
+  .form__checkbox-text {
+    display: block;
+  }
+
+  form button {
+    margin-top: 27px;
   }
 }
 

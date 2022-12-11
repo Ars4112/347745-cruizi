@@ -2,12 +2,26 @@
   background: #011c40;
   box-shadow: 0 4px 45px #011c4026;
   width: 403px;
+  margin: 0 auto;
   color: #f9fbfd;
   padding: 50px;
+
+  @media (max-width: $vp-768) {
+    width: auto;
+    padding: 35px 30px 40px;
+    max-width: 350px;
+    margin: 0 auto;
+  }
 }
 
-.form__text {
+form .form__text {
   @include fonts(500, 17px, 26px);
+
+  @media (max-width: $vp-768) {
+    text-align: center;
+    display: block;
+    width: 100%;
+  }
 }
 
 .form__list {
@@ -18,12 +32,21 @@
   display: flex;
   flex-direction: column;
   gap: 22px;
+
+  @media (max-width: $vp-768) {
+    gap: 20px;
+  }
 }
 
 .form__item input {
+  @include fonts(400, 14px, 21px);
   width: 100%;
   padding: 11px 16px;
   border: none;
+
+  & ::placeholder {
+    color: #011c40b3;
+  }
 }
 
 form > label {
@@ -49,6 +72,11 @@ form > label {
   & input:focus + .form__check-mark {
     outline: solid 2px #000000;
   }
+
+  @media (max-width: $vp-768) {
+    margin-top: 16px;
+    padding-left: 30px;
+  }
 }
 
 .form__check-mark {
@@ -63,6 +91,10 @@ form > label {
 
 .form__checkbox-text {
   @include fonts(400, 9px, 13px);
+
+  @media (max-width: $vp-768) {
+    display: block;
+  }
 }
 
 form button {
@@ -75,4 +107,30 @@ form button {
   width: 100%;
   color: #011c40;
   cursor: pointer;
+
+  @media (max-width: $vp-768) {
+    margin-top: 27px;
+  }
+}
+
+.form__item label {
+  position: relative;
+}
+
+.form__error {
+  color: #eb5a5a;
+  position: absolute;
+  top: 30px;
+  left: 0;
+}
+
+.form__error-checkbox {
+  color: #eb5a5a;
+  position: absolute;
+  top: 30px;
+  left: 0;
+}
+
+.form__message {
+  color: #f9fbfd;
 }

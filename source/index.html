@@ -23,16 +23,16 @@
 
         <ul class="nav__list">
           <li class="nav__item">
-            <a class="nav__link" href="#">Преимущества</a>
+            <a class="nav__link" href="#benefits">Преимущества</a>
           </li>
           <li class="nav__item">
-            <a class="nav__link" href="#">Направления</a>
+            <a class="nav__link" href="#travaling">Направления</a>
           </li>
           <li class="nav__item">
-            <a class="nav__link" href="#">Ближайшие круизы</a>
+            <a class="nav__link" href="#catalog">Ближайшие круизы</a>
           </li>
           <li class="nav__item">
-            <a class="nav__link" href="#">Контакты</a>
+            <a class="nav__link" href="#contacts">Контакты</a>
           </li>
         </ul>
         <button class="nav__button">
@@ -52,16 +52,16 @@
           </svg>
           <ul class="menu-mobile__list">
             <li class="menu-mobile__item">
-              <a class="menu-mobile__link" href="#">Преимущества</a>
+              <a class="menu-mobile__link" href="#benefits">Преимущества</a>
             </li>
             <li class="menu-mobile__item">
-              <a class="menu-mobile__link" href="#">Направления</a>
+              <a class="menu-mobile__link" href="#travaling">Направления</a>
             </li>
             <li class="menu-mobile__item">
-              <a class="menu-mobile__link" href="#">Ближайшие круизы</a>
+              <a class="menu-mobile__link" href="#catalog">Ближайшие круизы</a>
             </li>
             <li class="menu-mobile__item">
-              <a class="menu-mobile__link" href="#">Контакты</a>
+              <a class="menu-mobile__link" href="#contacts">Контакты</a>
             </li>
           </ul>
           <button class="menu-mobile__button menu-mobile__button--hidden">
@@ -79,7 +79,7 @@
           </p>
         </div>
       </section>
-      <section class="travaling">
+      <section class="travaling" id="travaling">
         <div class="travaling__wrapper">
           <div class="travaling__wrapper-text">
             <h2 class="travaling__title">Путешествие на&nbsp;край Земли</h2>
@@ -135,17 +135,17 @@
           </picture>
         </div>
       </section>
-      <section class="benefits">
+      <section class="benefits" id="benefits">
         <div class="benefits__wrapper">
           <h2 class="benefits__title">Преймущества</h2>
           <ul class="benefits__list">
             <li class="benefits__item">
               <svg
-                class="benefits__logo"
-                width="70"
-                height="38"
+                class="benefits__logo benefits__logo--first"
+                width="27"
+                height="32"
                 xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 72 40"
+                viewBox="0 0 29 34"
               >
                 <use href="img/sprite/sprite.svg#benefits-1"></use>
               </svg>
@@ -158,15 +158,18 @@
             </li>
             <li class="benefits__item">
               <svg
-                class="benefits__logo"
-                width="70"
-                height="38"
+                class="benefits__logo benefits__logo--second"
+                width="38"
+                height="32"
                 xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 72 40"
+                viewBox="0 0 40 34"
               >
                 <use href="img/sprite/sprite.svg#benefits-2"></use>
               </svg>
-              <h3 class="benefits__item-title">Система все включено</h3>
+              <h3 class="benefits__item-title">
+                Система <br />
+                все включено
+              </h3>
               <p class="benefits__text">
                 Все наши круизы работают по&nbsp;системе &laquo;Все
                 Включено&raquo;. Великолепные блюда и&nbsp;безлимитный бар
@@ -175,11 +178,11 @@
             </li>
             <li class="benefits__item">
               <svg
-                class="benefits__logo"
-                width="70"
-                height="38"
+                class="benefits__logo benefits__logo--third"
+                width="44"
+                height="32"
                 xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 72 40"
+                viewBox="0 0 46 34"
               >
                 <use href="img/sprite/sprite.svg#benefits-3"></use>
               </svg>
@@ -195,7 +198,7 @@
           </ul>
         </div>
       </section>
-      <section class="catalog">
+      <section class="catalog" id="catalog">
         <div class="catalog__wrapper">
           <h2>Ближайшие круизы</h2>
           <ul class="catalog__list">
@@ -695,30 +698,40 @@
               <li class="form__item">
                 <label>
                   <span class="visually-hidden">имя</span>
-                  <input type="text" placeholder="Имя" />
+                  <input type="text" name="name" placeholder="Имя" />
+                  <span class="form__error"></span>
                 </label>
               </li>
               <li class="form__item">
                 <label>
                   <span class="visually-hidden">Телефон</span>
-                  <input type="text" placeholder="Телефон" />
+                  <input type="text" name="tel" placeholder="Телефон" />
+                  <span class="form__error"></span>
                 </label>
               </li>
               <li class="form__item">
                 <label>
                   <span class="visually-hidden">Email</span>
-                  <input type="text" placeholder="Email" />
+                  <input type="text" name="email" placeholder="Email" />
+                  <span class="form__error"></span>
                 </label>
               </li>
             </ul>
             <label>
-              <input class="visually-hidden" type="checkbox" />
+              <input class="visually-hidden" name="agreement" type="checkbox" checked />
               <span class="form__check-mark"></span>
-              <span class="form__checkbox-text">Я согласен на обработку моих персональных данных</span>
+              <span class="form__checkbox-text"
+                >Я согласен на обработку моих персональных данных</span
+              >
+              <span class="form__error-checkbox"></span>
             </label>
             <button type="submit">Оставить заявку</button>
+            <span class="form__message"></span>
           </form>
         </div>
+      </section>
+      <section class="contacts" id="contacts">
+
       </section>
     </main>
     <footer class="footer">
@@ -735,16 +748,16 @@
           </svg>
           <ul class="nav__list">
             <li class="nav__item">
-              <a class="nav__link" href="#">Преимущества</a>
+              <a class="nav__link" href="#benefits">Преимущества</a>
             </li>
             <li class="nav__item">
-              <a class="nav__link" href="#">Направления</a>
+              <a class="nav__link" href="#travaling">Направления</a>
             </li>
             <li class="nav__item">
-              <a class="nav__link" href="#">Ближайшие круизы</a>
+              <a class="nav__link" href="#catalog">Ближайшие круизы</a>
             </li>
             <li class="nav__item">
-              <a class="nav__link" href="#">Контакты</a>
+              <a class="nav__link" href="#contacts">Контакты</a>
             </li>
           </ul>
         </nav>

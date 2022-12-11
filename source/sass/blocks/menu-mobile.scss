@@ -56,6 +56,14 @@
   @include fonts(500, 18px, 22px);
   padding: 5px;
   color: #011c40;
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &:active {
+    font-size: 24px;
+  }
 }
 
 .menu-mobile--visible {

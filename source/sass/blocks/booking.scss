@@ -61,26 +61,31 @@
   gap: 144px;
 
   @media (max-width: $vp-1024) {
-    padding: 100px 0;
+    padding: 90px 0;
     grid-template-columns: auto;
-    gap: 60px;
+    gap: 50px;
   }
 
   @media (max-width: $vp-768) {
-    padding: 65px 0;
-    gap: 40px;
+    padding: 58px 15px 66px;
+    gap: 33px;
   }
 }
 
 .booking__text-wrapper {
   display: flex;
   flex-direction: column;
-  // justify-content: center;
   gap: 6px;
   margin-top: 165px;
 
   @media (max-width: $vp-1024) {
-    gap: 25px;
+    gap: 6px;
+    align-items: center;
+    margin-top: 0;
+  }
+
+  @media (max-width: $vp-768) {
+    gap: 13px;
   }
 }
 
@@ -109,6 +114,6 @@
   }
 
   @media (max-width: $vp-768) {
-    @include fonts(400, 16px, 25px);
+    @include fonts(400, 16px, 23px);
   }
 }

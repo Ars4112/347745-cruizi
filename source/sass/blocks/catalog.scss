@@ -4,11 +4,11 @@
   margin: 0 auto;
 
   @media (max-width: $vp-1024) {
-    padding: 100px 60px;
+    padding: 90px 60px 100px;
   }
 
   @media (max-width: $vp-768) {
-    padding: 65px 25px;
+    padding: 55px 25px 65px;
   }
 }
 
@@ -19,6 +19,7 @@
   padding: 0;
   display: grid;
   grid-template-columns: repeat(4, minmax(200px, 260px));
+  grid-auto-rows: minmax(386px, auto);
   justify-content: center;
   gap: 30px;
 
@@ -27,7 +28,8 @@
   }
 
   @media (max-width: $vp-768) {
-    grid-template-columns: 270px;
+    grid-template-columns: minmax(auto, 270px);
+    margin-top: 31px;
   }
 }
 
@@ -40,6 +42,10 @@
 
   &:hover .catalog__image-wrapper {
     display: none;
+  }
+
+  @media (max-width: $vp-1024) {
+    padding: 35px 35px 80px;
   }
 }
 
@@ -85,6 +91,11 @@
   text-align: center;
   background: #f9fbfd;
   color: #011c40;
+
+  @media (max-width: $vp-1024) {
+    left: 35px;
+    right: 35px;
+  }
 }
 
 .catalog__image {
