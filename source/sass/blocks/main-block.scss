@@ -8,19 +8,55 @@
   display: flex;
   align-items: center;
 
+  @media (min-resolution: 1dppx) {
+    background-image: url("../img/main-block-desktop.webp");
+  }
+
+  @media (min-resolution: 2dppx) {
+    background-image: url("../img/main-block-desktop@2x.jpg");
+  }
+
+  @media (min-resolution: 2dppx) {
+    background-image: url("../img/main-block-desktop@2x.webp");
+  }
+
   @media (max-width: $vp-1024) {
     background-image: url("../img/main-block-tablet.jpg");
     min-height: 636px;
+
+    @media (min-resolution: 1dppx) {
+      background-image: url("../img/main-block-desktop.webp");
+    }
+
+    @media (min-resolution: 2dppx) {
+      background-image: url("../img/main-block-tablet@2x.jpg");
+    }
+
+    @media (min-resolution: 2dppx) {
+      background-image: url("../img/main-block-tablet@2x.webp");
+    }
   }
 
   @media (max-width: $vp-768) {
     background-image: url("../img/main-block-mobile.jpg");
     min-height: 500px;
+
+    @media (min-resolution: 1dppx) {
+      background-image: url("../img/main-block-mobile.webp");
+    }
+
+    @media (min-resolution: 2dppx) {
+      background-image: url("../img/main-block-mobile@2x.jpg");
+    }
+
+    @media (min-resolution: 2dppx) {
+      background-image: url("../img/main-block-mobile@2x.webp");
+    }
   }
 }
 
 .main-block__container {
-  // width: 100%;
+  width: 100%;
   max-width: 1366px;
   margin: 0 auto;
   padding: 0 198px;

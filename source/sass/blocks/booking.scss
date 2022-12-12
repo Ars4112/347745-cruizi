@@ -61,7 +61,7 @@
   gap: 144px;
 
   @media (max-width: $vp-1024) {
-    padding: 90px 0;
+    padding: 90px 0 100px;
     grid-template-columns: auto;
     gap: 50px;
   }

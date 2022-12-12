@@ -47,6 +47,10 @@
   @media (max-width: $vp-1024) {
     padding: 35px 35px 80px;
   }
+
+  @media (max-width: $vp-768) {
+    padding: 35px 25px 80px;
+  }
 }
 
 .catalog__sub-list {
@@ -96,6 +100,11 @@
     left: 35px;
     right: 35px;
   }
+
+  @media (max-width: $vp-768) {
+    left: 25px;
+    right: 25px;
+  }
 }
 
 .catalog__image {
@@ -114,5 +123,10 @@
     left: 30px;
     z-index: 1;
     margin: 0;
+
+    @media (max-width: $vp-768) {
+      bottom: 15px;
+      left: 25px;
+    }
   }
 }

@@ -1,26 +1,29 @@
 let viewport = document.documentElement.clientWidth;
 const header = document.querySelector('.header');
-const headerNav = header.querySelector('.header__nav');
-const menuMobile = header.querySelector('.menu-mobile');
-const buttonOpened = headerNav.querySelector('.nav__button');
-const buttonCloced = menuMobile.querySelector('.menu-mobile__button');
-const menuMobileNav = menuMobile.querySelector('.menu-mobile__nav');
+const headerNav = document.querySelector('.header__nav');
+const menuMobile = document.querySelector('.menu-mobile');
+const buttonOpened = document.querySelector('.nav__button');
+const buttonCloced = document.querySelector('.menu-mobile__button');
+const menuMobileNav = document.querySelector('.menu-mobile__nav');
 const form = document.querySelector('form');
 
 if (viewport <= 768) {
-  header.classList.remove('header--position');
-  menuMobileNav.classList.add('menu-mobile__nav--position');
-  menuMobile.classList.remove('menu-mobile--visible');
-  menuMobile.classList.add('menu-mobile--hidden');
-  headerNav.classList.remove('nav--hidden');
-  buttonCloced.style.display = 'block';
+  if (header) {
+    header.classList.remove('header--position');
+    menuMobileNav.classList.add('menu-mobile__nav--position');
+    menuMobile.classList.remove('menu-mobile--visible');
+    menuMobile.classList.add('menu-mobile--hidden');
+    headerNav.classList.remove('nav--hidden');
+    buttonCloced.style.display = 'block';
 
-  [buttonOpened, buttonCloced].forEach((elem) => {
-    elem.addEventListener('click', () => {
-      menuMobile.classList.toggle('menu-mobile--hidden');
-      headerNav.classList.toggle('nav--hidden');
+    [buttonOpened, buttonCloced].forEach((elem) => {
+      elem.addEventListener('click', () => {
+        menuMobile.classList.toggle('menu-mobile--hidden');
+        headerNav.classList.toggle('nav--hidden');
+      });
     });
-  });
+  }
+
 }
 
 const addMask = () => {
@@ -52,100 +55,105 @@ const addMask = () => {
         }
       });
     };
-    let phoneInputs = form.querySelectorAll('input[name="tel"]');
-    for (let elem of phoneInputs) {
-      for (let ev of ['input', 'blur', 'focus']) {
-        elem.addEventListener(ev, eventCalllback);
+    if (form) {
+      let phoneInputs = form.querySelectorAll('input[name="tel"]');
+      for (let elem of phoneInputs) {
+        for (let ev of ['input', 'blur', 'focus']) {
+          elem.addEventListener(ev, eventCalllback);
+        }
       }
     }
   });
 };
 
 const addValid = () => {
-  const input = form.querySelectorAll('form input');
-  const checkbox = form.querySelector('form input[name="agreement"]');
-  const regExpEmail = /^(([^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/iu;
-  const regExpName = /^[a-zA-Z][a-zA-Z0-9-_\.]{1,20}$/;
-  let isValidate;
+  if (form) {
+    const input = form.querySelectorAll('form input');
+    const checkbox = form.querySelector('form input[name="agreement"]');
+    const regExpEmail = /^(([^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/iu;
+    const regExpName = /^[a-zA-Z][a-zA-Z0-9-_\.]{1,20}$/;
+    let isValidate;
 
-  const validateElement = (element) => {
-    if (element.name === 'name') {
-      if (!regExpName.test(element.value)) {
-        element.nextElementSibling.textContent = 'Не валидное имя';
-        isValidate = false;
-      } else {
-        element.nextElementSibling.textContent = '';
-        isValidate = false;
+    const validateElement = (element) => {
+      if (element.name === 'name') {
+        if (!regExpName.test(element.value)) {
+          element.nextElementSibling.textContent = 'Не валидное имя';
+          isValidate = false;
+        } else {
+          element.nextElementSibling.textContent = '';
+          isValidate = false;
+        }
       }
-    }
-    if (element.name === 'email') {
-      if (!regExpEmail.test(element.value)) {
-        element.nextElementSibling.textContent = 'Не валидный email';
-        isValidate = false;
-      } else {
-        element.nextElementSibling.textContent = '';
-        isValidate = true;
-      }
-    }
-    if (element.name === 'tel') {
-      if (element.value.replaceAll(/\D/g, '').length < 11) {
-        element.nextElementSibling.textContent = 'Введите полный номер';
-        isValidate = false;
-      } else {
-        element.nextElementSibling.textContent = '';
-        isValidate = true;
-      }
-    }
-    if (element.name === 'agreement') {
-      if (element.checked) {
-        form.querySelector('.form__error-checkbox').textContent = '';
-        isValidate = true;
-      } else {
-        form.querySelector('.form__error-checkbox').textContent =
-            'Согласитесь с условиями';
-        isValidate = false;
-      }
-    }
-  };
-
-  input.forEach((element) => {
-    ['input', 'blur', 'focus'].forEach((elem)=> {
-      element.addEventListener(elem, () => {
-        validateElement(element);
-      });
-    });
-  });
-
-  form.addEventListener('submit', (evt) => {
-    input.forEach((element) => {
-      if (element.value === '') {
-        element.nextElementSibling.textContent = 'Заполните поле';
-        isValidate = false;
-      } else {
-        element.nextElementSibling.textContent = '';
+      if (element.name === 'email') {
+        if (!regExpEmail.test(element.value)) {
+          element.nextElementSibling.textContent = 'Не валидный email';
+          isValidate = false;
+        } else {
+          element.nextElementSibling.textContent = '';
+          isValidate = true;
+        }
       }
       if (element.name === 'tel') {
+        if (element.value.replaceAll(/\D/g, '').length < 11) {
+          element.nextElementSibling.textContent = 'Введите полный номер';
+          isValidate = false;
+        } else {
+          element.nextElementSibling.textContent = '';
+          isValidate = true;
+        }
+      }
+      if (element.name === 'agreement') {
+        if (element.checked) {
+          form.querySelector('.form__error-checkbox').textContent = '';
+          isValidate = true;
+        } else {
+          form.querySelector('.form__error-checkbox').textContent =
+              'Согласитесь с условиями';
+          isValidate = false;
+        }
+      }
+    };
+
+    input.forEach((element) => {
+      ['input', 'blur', 'focus'].forEach((elem)=> {
+        element.addEventListener(elem, () => {
+          validateElement(element);
+        });
+      });
+    });
+
+    form.addEventListener('submit', (evt) => {
+      input.forEach((element) => {
         if (element.value === '') {
-          element.nextElementSibling.textContent =
-            'Введите номер телефона';
+          element.nextElementSibling.textContent = 'Заполните поле';
           isValidate = false;
         } else {
           element.nextElementSibling.textContent = '';
         }
+        if (element.name === 'tel') {
+          if (element.value === '') {
+            element.nextElementSibling.textContent =
+              'Введите номер телефона';
+            isValidate = false;
+          } else {
+            element.nextElementSibling.textContent = '';
+          }
+        }
+      });
+      if (!checkbox.checked) {
+
+        evt.preventDefault();
+      }
+      if (isValidate) {
+        form.reset();
+        form.querySelector('.form__message').textContent =
+              'Форма отправлена успешно';
+      } else {
+        evt.preventDefault();
       }
     });
-    if (!checkbox.checked) {
+  }
 
-      evt.preventDefault();
-    }
-    if (isValidate) {
-      form.reset();
-      form.querySelector('.form__message').textContent =
-            'Форма отправлена успешно';
-    } else {
-      evt.preventDefault();
-    }
-  });
 };
 const addScroll = ()=> {
   const button = document.querySelectorAll('nav a');
