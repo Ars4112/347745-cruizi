@@ -33,22 +33,18 @@
   }
 
   @media (max-width: $vp-768) {
-    background-image: linear-gradient(#04182780),
-      url("../img/booking-mobile.jpg");
+    background-image: url("../img/booking-mobile.jpg");
 
     @media (min-resolution: 1dppx) {
-      background-image: linear-gradient(#04182780),
-        url("../img/booking-mobile.webp");
+      background-image: url("../img/booking-mobile.webp");
     }
 
     @media (min-resolution: 2dppx) {
-      background-image: linear-gradient(#04182780),
-        url("../img/booking-mobile@2x.jpg");
+      background-image: url("../img/booking-mobile@2x.jpg");
     }
 
     @media (min-resolution: 2dppx) {
-      background-image: linear-gradient(#04182780),
-        url("../img/booking-mobile@2x.webp");
+      background-image: url("../img/booking-mobile@2x.webp");
     }
   }
 }

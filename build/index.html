@@ -17,8 +17,8 @@
     />
   </head>
   <body>
-    <!-- <header class="header header--position">
-      <nav class="header__nav nav nav--hidden">
+    <header class="header">
+      <nav class="header__nav nav nav__menu-mobile">
         <svg
           class="nav__logo"
           width="70"
@@ -43,11 +43,11 @@
             <a class="nav__link" href="#contacts">Контакты</a>
           </li>
         </ul>
-        <button class="nav__button">
+        <button class="nav__button nav__button--hidden">
           <span class="visually-hidden">Открыть меню</span>
         </button>
       </nav>
-      <div class="header__menu menu-mobile menu-mobile--visible">
+      <!-- <div class="header__menu menu-mobile menu-mobile--visible">
         <nav class="menu-mobile__nav">
           <svg
             class="menu-mobile__logo"
@@ -76,7 +76,7 @@
             <span class="visually-hidden">Закрыть меню</span>
           </button>
         </nav>
-      </div>
+      </div> -->
     </header>
     <main>
       <section class="main-block">
@@ -90,8 +90,8 @@
       <section class="travaling" id="travaling">
         <div class="travaling__wrapper">
           <div class="travaling__wrapper-text">
-            <h2 class="travaling__title">Путешествие на&nbsp;край Земли</h2>
-            <p class="travaling__text">
+            <h2>Путешествие на&nbsp;край Земли</h2>
+            <p>
               Это волшебное путешествие поможет вам познакомиться поближе с
               удивительным миром Антарктики. Наш круизный лайнер отвезет вас на
               край Земли, где вы&nbsp;сможете увидеть: ледяные айсберги,
@@ -133,7 +133,6 @@
               height="175"
             />
             <img
-              class="travaling__image"
               src="img/travaling.jpg"
               srcset="img/travaling@2x.jpg 2x"
               alt="изображение пингвинов на севере"
@@ -145,7 +144,7 @@
       </section>
       <section class="benefits" id="benefits">
         <div class="benefits__wrapper">
-          <h2 class="benefits__title">Преймущества</h2>
+          <h2 class="benefits__title">Преимущества</h2>
           <ul class="benefits__list">
             <li class="benefits__item">
               <svg
@@ -174,10 +173,7 @@
               >
                 <use href="img/sprite/sprite.svg#benefits-2"></use>
               </svg>
-              <h3 class="benefits__item-title">
-                Система
-                все включено
-              </h3>
+              <h3 class="benefits__item-title">Система все включено</h3>
               <p class="benefits__text">
                 Все наши круизы работают по&nbsp;системе &laquo;Все
                 Включено&raquo;. Великолепные блюда и&nbsp;безлимитный бар
@@ -262,7 +258,7 @@
                     class="catalog__image"
                     src="img/catalog-desktop-1.jpg"
                     srcset="img/catalog-desktop-1@2x.jpg"
-                    alt=""
+                    alt="антарктический пейзаж"
                     width="260"
                     height="386"
                   />
@@ -319,7 +315,7 @@
                     class="catalog__image"
                     src="img/catalog-desktop-1.jpg"
                     srcset="img/catalog-desktop-1@2x.jpg"
-                    alt=""
+                    alt="антарктический пейзаж"
                     width="260"
                     height="386"
                   />
@@ -379,7 +375,7 @@
                     class="catalog__image"
                     src="img/catalog-desktop-2.jpg"
                     srcset="img/catalog-desktop-2@2x.jpg"
-                    alt=""
+                    alt="антарктический пейзаж"
                     width="260"
                     height="386"
                   />
@@ -436,7 +432,7 @@
                     class="catalog__image"
                     src="img/catalog-desktop-3.jpg"
                     srcset="img/catalog-desktop-3@2x.jpg"
-                    alt=""
+                    alt="антарктический пейзаж"
                     width="260"
                     height="386"
                   />
@@ -496,7 +492,7 @@
                     class="catalog__image"
                     src="img/catalog-desktop-4.jpg"
                     srcset="img/catalog-desktop-4@2x.jpg"
-                    alt=""
+                    alt="антарктический пейзаж"
                     width="260"
                     height="386"
                   />
@@ -555,7 +551,7 @@
                     class="catalog__image"
                     src="img/catalog-desktop-5.jpg"
                     srcset="img/catalog-desktop-5@2x.jpg"
-                    alt=""
+                    alt="антарктический пейзаж"
                     width="260"
                     height="386"
                   />
@@ -614,7 +610,7 @@
                     class="catalog__image"
                     src="img/catalog-desktop-6.jpg"
                     srcset="img/catalog-desktop-6@2x.jpg"
-                    alt=""
+                    alt="антарктический пейзаж"
                     width="260"
                     height="386"
                   />
@@ -673,7 +669,7 @@
                     class="catalog__image"
                     src="img/catalog-desktop-7.jpg"
                     srcset="img/catalog-desktop-7@2x.jpg"
-                    alt=""
+                    alt="антарктический пейзаж"
                     width="260"
                     height="386"
                   />
@@ -713,14 +709,14 @@
               <li class="form__item">
                 <label>
                   <span class="visually-hidden">Телефон</span>
-                  <input type="text" name="tel" placeholder="Телефон" />
+                  <input type="tel" name="tel" placeholder="Телефон" />
                   <span class="form__error"></span>
                 </label>
               </li>
               <li class="form__item">
                 <label>
                   <span class="visually-hidden">Email</span>
-                  <input type="text" name="email" placeholder="Email" />
+                  <input type="email" name="email" placeholder="Email" />
                   <span class="form__error"></span>
                 </label>
               </li>
@@ -746,12 +742,16 @@
       <section class="contacts" id="contacts">
         <h2 class="visually-hidden">Контакты</h2>
         <div class="contacts__wrapper">
-          <div class="contacts__map" style="position: relative; overflow: hidden">
+          <div
+            class="contacts__map"
+            style="position: relative; overflow: hidden"
+          >
             <a
               href="https://yandex.ru/maps/2/saint-petersburg/?utm_medium=mapframe&utm_source=maps"
               style="color: #eee; font-size: 12px; position: absolute; top: 0px"
               >Санкт‑Петербург</a
-            ><a
+            >
+            <a
               href="https://yandex.ru/maps/2/saint-petersburg/house/bolshaya_konyushennaya_ulitsa_19_8/Z0kYdQVjSEQPQFtjfXVyeXpgYQ==/?ll=30.323117%2C59.938635&utm_medium=mapframe&utm_source=maps&z=16.29"
               style="
                 color: #eee;
@@ -760,17 +760,16 @@
                 top: 14px;
               "
               >Большая Конюшенная улица, 19/8&nbsp;&mdash; Яндекс Карты</a
-            ><iframe
+            >
+            <iframe
               src="https://yandex.ru/map-widget/v1/-/CCUfAWvKLD"
-              frameborder="1"
-              allowfullscreen="true"
               style="position: relative"
             ></iframe>
           </div>
           <div class="contacts__text-wrapper">
             <p class="contacts__text">
-              У&nbsp;вас ещё остались вопросы или сомнения? Приезжайте к&nbsp;нам в&nbsp;офис и
-              мы&nbsp;вам все расскажем.
+              У&nbsp;вас ещё остались вопросы или сомнения? Приезжайте
+              к&nbsp;нам в&nbsp;офис и мы&nbsp;вам все расскажем.
             </p>
             <ul class="contacts__list">
               <li class="contacts__item">
@@ -788,7 +787,7 @@
               </li>
               <li class="contacts__item">
                 <svg
-                class="contacts__icon"
+                  class="contacts__icon"
                   width="18"
                   height="18"
                   xmlns="http://www.w3.org/2000/svg"
@@ -796,7 +795,9 @@
                 >
                   <use href="img/sprite/sprite.svg#tel"></use>
                 </svg>
-                <a class="contacts__link" href="tel:8-800-200-00-00">8-800-200-00-00</a>
+                <a class="contacts__link" href="tel:8-800-200-00-00"
+                  >8-800-200-00-00</a
+                >
               </li>
             </ul>
           </div>
@@ -902,9 +903,9 @@
           </button>
         </div>
       </div>
-    </div> -->
+    </div>-->
 
     <script src="js/vendor.min.js"></script>
-    <script src="js/main.min.js"></script> -->
+    <script src="js/main.min.js"></script>
   </body>
 </html>

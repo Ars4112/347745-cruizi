@@ -1,27 +1,22 @@
 let viewport = document.documentElement.clientWidth;
 const header = document.querySelector('.header');
 const headerNav = document.querySelector('.header__nav');
-const menuMobile = document.querySelector('.menu-mobile');
-const buttonOpened = document.querySelector('.nav__button');
-const buttonCloced = document.querySelector('.menu-mobile__button');
-const menuMobileNav = document.querySelector('.menu-mobile__nav');
+const buttonOpenMenu = document.querySelector('.nav__button');
+
+
 const form = document.querySelector('form');
 
 if (viewport <= 768) {
   if (header) {
-    header.classList.remove('header--position');
-    menuMobileNav.classList.add('menu-mobile__nav--position');
-    menuMobile.classList.remove('menu-mobile--visible');
-    menuMobile.classList.add('menu-mobile--hidden');
-    headerNav.classList.remove('nav--hidden');
-    buttonCloced.style.display = 'block';
+    headerNav.classList.remove('nav__menu-mobile');
+    header.style.position = 'absolute';
+    buttonOpenMenu.classList.remove('nav__button--hidden');
 
-    [buttonOpened, buttonCloced].forEach((elem) => {
-      elem.addEventListener('click', () => {
-        menuMobile.classList.toggle('menu-mobile--hidden');
-        headerNav.classList.toggle('nav--hidden');
-      });
+    buttonOpenMenu.addEventListener('click', () => {
+      headerNav.classList.toggle('nav__menu-mobile');
+      headerNav.classList.toggle('nav__menu-mobile--position');
     });
+
   }
 
 }
@@ -164,8 +159,8 @@ const addScroll = ()=> {
       evt.preventDefault();
       if (element.hash === '#benefits') {
         if (viewport <= 768) {
-          menuMobile.classList.add('menu-mobile--hidden');
-          headerNav.classList.remove('nav--hidden');
+          headerNav.classList.remove('nav__menu-mobile');
+          headerNav.classList.remove('nav__menu-mobile--position');
         }
         idList[1].scrollIntoView({
           block: 'start',
@@ -174,8 +169,8 @@ const addScroll = ()=> {
       }
       if (element.hash === '#travaling') {
         if (viewport <= 768) {
-          menuMobile.classList.add('menu-mobile--hidden');
-          headerNav.classList.remove('nav--hidden');
+          headerNav.classList.remove('nav__menu-mobile');
+          headerNav.classList.remove('nav__menu-mobile--position');
         }
         idList[0].scrollIntoView({
           block: 'start',
@@ -184,8 +179,8 @@ const addScroll = ()=> {
       }
       if (element.hash === '#catalog') {
         if (viewport <= 768) {
-          menuMobile.classList.add('menu-mobile--hidden');
-          headerNav.classList.remove('nav--hidden');
+          headerNav.classList.remove('nav__menu-mobile');
+          headerNav.classList.remove('nav__menu-mobile--position');
         }
         idList[2].scrollIntoView({
           block: 'start',
@@ -194,8 +189,8 @@ const addScroll = ()=> {
       }
       if (element.hash === '#contacts') {
         if (viewport <= 768) {
-          menuMobile.classList.add('menu-mobile--hidden');
-          headerNav.classList.remove('nav--hidden');
+          headerNav.classList.remove('nav__menu-mobile');
+          headerNav.classList.remove('nav__menu-mobile--position');
         }
         idList[3].scrollIntoView({
           block: 'start',

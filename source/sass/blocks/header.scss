@@ -3,6 +3,10 @@
   left: 0;
   right: 0;
   top: 0;
+
+  @media (max-width: $vp-768) {
+    position: static;
+  }
 }
 
 .header__nav {
