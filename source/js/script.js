@@ -2,22 +2,17 @@ let viewport = document.documentElement.clientWidth;
 const header = document.querySelector('.header');
 const headerNav = document.querySelector('.header__nav');
 const buttonOpenMenu = document.querySelector('.nav__button');
-
-
 const form = document.querySelector('form');
 
-if (viewport <= 768) {
-  if (header) {
-    headerNav.classList.remove('nav__menu-mobile');
-    header.style.position = 'absolute';
-    buttonOpenMenu.classList.remove('nav__button--hidden');
+if (header) {
+  headerNav.classList.remove('nav__menu-mobile');
+  header.style.position = 'absolute';
+  buttonOpenMenu.classList.remove('nav__button--hidden');
 
-    buttonOpenMenu.addEventListener('click', () => {
-      headerNav.classList.toggle('nav__menu-mobile');
-      headerNav.classList.toggle('nav__menu-mobile--position');
-    });
-
-  }
+  buttonOpenMenu.addEventListener('click', () => {
+    headerNav.classList.toggle('nav__menu-mobile');
+    headerNav.classList.toggle('nav__menu-mobile--position');
+  });
 
 }
 

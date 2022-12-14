@@ -1263,7 +1263,7 @@ h3 {
   }
 }
 
-.menu-mobile__nav--position {
+.nav__menu-mobile--position {
   position: absolute;
   top: 0;
   right: 0;
@@ -1362,17 +1362,14 @@ h3 {
   padding: 0;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (1fr)[3];
-  grid-template-columns: repeat(3, 1fr);
+  -ms-grid-columns: (minmax(200px, 360px))[3];
+  grid-template-columns: repeat(3, minmax(200px, 360px));
   -ms-grid-rows: minmax(241px, auto);
   grid-template-rows: minmax(241px, auto);
   gap: 40px;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: start;
 }
 @media (max-width: 1024px) {
   .benefits__list {
@@ -1625,7 +1622,7 @@ h3 {
       -ms-flex-direction: column;
           flex-direction: column;
   gap: 8px;
-  height: 233px;
+  height: 237px;
   overflow: scroll;
 }
 
@@ -1996,7 +1993,8 @@ form > label input:checked + .form__check-mark::before {
           transform: translate(-50%, -50%);
 }
 form > label input:focus + .form__check-mark {
-  outline: solid 2px #000000;
+  outline: solid 2px #fd9926;
+  border-radius: 3px;
 }
 form > label:hover .form__checkbox-text {
   opacity: 0.8;

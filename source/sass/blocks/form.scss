@@ -78,7 +78,8 @@ form > label {
   }
 
   & input:focus + .form__check-mark {
-    outline: solid 2px #000000;
+    outline: solid 2px #fd9926;
+    border-radius: 3px;
   }
 
   &:hover .form__checkbox-text {
