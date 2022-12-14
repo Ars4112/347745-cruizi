@@ -1623,7 +1623,7 @@ h3 {
           flex-direction: column;
   gap: 8px;
   height: 237px;
-  overflow: scroll;
+  overflow-y: auto;
 }
 
 .catalog__item-title {
