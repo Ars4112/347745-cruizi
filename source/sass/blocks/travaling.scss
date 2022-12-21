@@ -2,10 +2,6 @@
   & h2 {
     text-align: start;
 
-    @media (max-width: $vp-1024) {
-      font-size: 28px;
-    }
-
     @media (max-width: $vp-768) {
       font-size: 24px;
       max-width: 280px;
@@ -16,7 +12,7 @@
     margin: 0;
     margin-top: 30px;
     font-weight: 400;
-    font-size: 15px;
+    font-size: 16px;
     line-height: 24px;
 
     @media (max-width: $vp-1024) {
@@ -27,6 +23,7 @@
   & img {
     object-fit: cover;
     margin-top: 5px;
+    width: 100%;
 
     @media (max-width: $vp-1024) {
       margin-top: 15px;
@@ -55,7 +52,7 @@
   }
 
   @media (max-width: $vp-768) {
-    grid-template-columns: auto;
+    grid-template-columns: 1fr;
     justify-content: center;
     gap: 42px;
     padding: 55px 15px;

@@ -13,11 +13,11 @@
 .contacts__wrapper {
   width: 100%;
   max-width: 1366px;
-
+  margin: 0 auto;
   display: grid;
   grid-template-columns: minmax(400px, 560px) minmax(400px, 500px);
   grid-template-rows: minmax(306px, auto);
-  justify-content: center;
+
   gap: 100px;
 
   @media (max-width: $vp-1024) {
@@ -62,7 +62,7 @@
 }
 
 .contacts__text {
-  @include fonts(500, 17px, 27px);
+  @include fonts(500, 18px, 27px);
   margin: 0;
 }
 
@@ -95,4 +95,8 @@
 
 .contacts__address {
   font-style: normal;
+}
+
+.contacts__link {
+  color: #011c40;
 }

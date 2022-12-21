@@ -1,6 +1,7 @@
 body {
   @include fonts(400, 16px, 24px);
   color: #011c40;
+  position: relative;
 }
 
 h2 {
@@ -24,6 +25,10 @@ h3 {
   @media (max-width: $vp-1024) {
     @include fonts(500, 18px, 25px);
   }
+}
+
+.menu-open {
+  overflow: hidden;
 }
 
 .wrapper {

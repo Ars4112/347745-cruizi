@@ -33,3 +33,16 @@
     position: relative;
   }
 }
+
+.button__close {
+  @media (max-width: $vp-768) {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 43, 102, 0.5);
+    border: none;
+    z-index: 1;
+  }
+}

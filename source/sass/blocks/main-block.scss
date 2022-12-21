@@ -6,6 +6,7 @@
   background-size: cover;
   width: 100%;
   min-height: 656px;
+  padding: 200px 0;
   display: flex;
   align-items: center;
 
@@ -23,10 +24,11 @@
 
   @media (max-width: $vp-1024) {
     background-image: url("../img/main-block-tablet.jpg");
+    background-position: center;
     min-height: 636px;
 
     @media (min-resolution: 1dppx) {
-      background-image: url("../img/main-block-desktop.webp");
+      background-image: url("../img/main-block-tablet.webp");
     }
 
     @media (min-resolution: 2dppx) {
@@ -40,6 +42,7 @@
 
   @media (max-width: $vp-768) {
     background-image: url("../img/main-block-mobile.jpg");
+    background-position: bottom;
     min-height: 500px;
 
     @media (min-resolution: 1dppx) {
@@ -104,6 +107,5 @@
   @media (max-width: $vp-768) {
     @include fonts(400, 16px, 22px);
     margin-top: 10px;
-    max-width: 220px;
   }
 }

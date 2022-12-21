@@ -19,7 +19,7 @@
 }
 
 form .form__text {
-  @include fonts(500, 17px, 26px);
+  @include fonts(500, 18px, 26px);
 
   @media (max-width: $vp-768) {
     text-align: center;
@@ -62,6 +62,7 @@ form > label {
   margin-top: 18px;
   padding-left: 23px;
   position: relative;
+  cursor: pointer;
 
   & input:checked + .form__check-mark::before {
     content: "";
@@ -84,6 +85,18 @@ form > label {
 
   &:hover .form__checkbox-text {
     opacity: 0.8;
+  }
+
+  &:hover .form__check-mark {
+    opacity: 0.8;
+  }
+
+  &:hover input:checked + .form__check-mark::before {
+    content: "";
+    position: absolute;
+    top: 38%;
+    left: 23%;
+    transform: scale(1.2);
   }
 
   @media (max-width: $vp-1024) {

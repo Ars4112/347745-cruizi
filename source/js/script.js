@@ -3,15 +3,30 @@ const header = document.querySelector('.header');
 const headerNav = document.querySelector('.header__nav');
 const buttonOpenMenu = document.querySelector('.nav__button');
 const form = document.querySelector('form');
+const body = document.querySelector('body');
+const headerButton = document.querySelector('.header__button');
+const navList = document.querySelector('.nav__list');
 
 if (header) {
   headerNav.classList.remove('nav__menu-mobile');
   header.style.position = 'absolute';
   buttonOpenMenu.classList.remove('nav__button--hidden');
+  navList.classList.add('nav__list--overflow');
 
   buttonOpenMenu.addEventListener('click', () => {
     headerNav.classList.toggle('nav__menu-mobile');
     headerNav.classList.toggle('nav__menu-mobile--position');
+    headerButton.classList.toggle('button__close');
+    headerButton.classList.toggle('visually-hidden');
+    body.classList.toggle('menu-open');
+  });
+
+  headerButton.addEventListener('click', ()=> {
+    headerNav.classList.toggle('nav__menu-mobile');
+    headerNav.classList.toggle('nav__menu-mobile--position');
+    headerButton.classList.toggle('button__close');
+    headerButton.classList.toggle('visually-hidden');
+    body.classList.toggle('menu-open');
   });
 
 }
@@ -62,50 +77,52 @@ const addValid = () => {
     const checkbox = form.querySelector('form input[name="agreement"]');
     const regExpEmail = /^(([^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/iu;
     const regExpName = /^[a-zA-Z][a-zA-Z0-9-_\.]{1,20}$/;
-    let isValidate;
+    let isValidateEmail;
+    let isValidateName;
+    let isValidateTel;
+    let valid;
+
 
     const validateElement = (element) => {
       if (element.name === 'name') {
         if (!regExpName.test(element.value)) {
           element.nextElementSibling.textContent = 'Не валидное имя';
-          isValidate = false;
+          isValidateName = false;
         } else {
           element.nextElementSibling.textContent = '';
-          isValidate = false;
+          isValidateName = true;
         }
       }
       if (element.name === 'email') {
         if (!regExpEmail.test(element.value)) {
           element.nextElementSibling.textContent = 'Не валидный email';
-          isValidate = false;
+          isValidateEmail = false;
         } else {
           element.nextElementSibling.textContent = '';
-          isValidate = true;
+          isValidateEmail = true;
         }
       }
       if (element.name === 'tel') {
         if (element.value.replaceAll(/\D/g, '').length < 11) {
           element.nextElementSibling.textContent = 'Введите полный номер';
-          isValidate = false;
+          isValidateTel = false;
         } else {
           element.nextElementSibling.textContent = '';
-          isValidate = true;
+          isValidateTel = true;
         }
       }
       if (element.name === 'agreement') {
         if (element.checked) {
           form.querySelector('.form__error-checkbox').textContent = '';
-          isValidate = true;
         } else {
           form.querySelector('.form__error-checkbox').textContent =
               'Согласитесь с условиями';
-          isValidate = false;
         }
       }
     };
 
     input.forEach((element) => {
-      ['input', 'blur', 'focus'].forEach((elem)=> {
+      ['blur', 'input', 'focus'].forEach((elem)=> {
         element.addEventListener(elem, () => {
           validateElement(element);
         });
@@ -113,33 +130,41 @@ const addValid = () => {
     });
 
     form.addEventListener('submit', (evt) => {
-      input.forEach((element) => {
-        if (element.value === '') {
-          element.nextElementSibling.textContent = 'Заполните поле';
-          isValidate = false;
-        } else {
-          element.nextElementSibling.textContent = '';
+
+      input.forEach((element)=> {
+
+        if (element !== checkbox) {
+          if (element.value === '') {
+            element.nextElementSibling.textContent = 'Заполните поле';
+            valid = false;
+          } else {
+            element.nextElementSibling.textContent = '';
+            valid = true;
+          }
         }
+
         if (element.name === 'tel') {
           if (element.value === '') {
             element.nextElementSibling.textContent =
               'Введите номер телефона';
-            isValidate = false;
           } else {
             element.nextElementSibling.textContent = '';
           }
         }
       });
+
       if (!checkbox.checked) {
 
         evt.preventDefault();
-      }
-      if (isValidate) {
+      } else if (valid && isValidateName && isValidateEmail && isValidateTel) {
         form.reset();
         form.querySelector('.form__message').textContent =
               'Форма отправлена успешно';
       } else {
         evt.preventDefault();
+        input.forEach((element) => {
+          validateElement(element);
+        });
       }
     });
   }
@@ -156,6 +181,9 @@ const addScroll = ()=> {
         if (viewport <= 768) {
           headerNav.classList.remove('nav__menu-mobile');
           headerNav.classList.remove('nav__menu-mobile--position');
+          headerButton.classList.remove('button__close');
+          headerButton.classList.add('visually-hidden');
+          body.classList.remove('menu-open');
         }
         idList[1].scrollIntoView({
           block: 'start',
@@ -166,6 +194,9 @@ const addScroll = ()=> {
         if (viewport <= 768) {
           headerNav.classList.remove('nav__menu-mobile');
           headerNav.classList.remove('nav__menu-mobile--position');
+          headerButton.classList.remove('button__close');
+          headerButton.classList.add('visually-hidden');
+          body.classList.remove('menu-open');
         }
         idList[0].scrollIntoView({
           block: 'start',
@@ -176,6 +207,9 @@ const addScroll = ()=> {
         if (viewport <= 768) {
           headerNav.classList.remove('nav__menu-mobile');
           headerNav.classList.remove('nav__menu-mobile--position');
+          headerButton.classList.remove('button__close');
+          headerButton.classList.add('visually-hidden');
+          body.classList.remove('menu-open');
         }
         idList[2].scrollIntoView({
           block: 'start',
@@ -186,6 +220,9 @@ const addScroll = ()=> {
         if (viewport <= 768) {
           headerNav.classList.remove('nav__menu-mobile');
           headerNav.classList.remove('nav__menu-mobile--position');
+          headerButton.classList.remove('button__close');
+          headerButton.classList.add('visually-hidden');
+          body.classList.remove('menu-open');
         }
         idList[3].scrollIntoView({
           block: 'start',
