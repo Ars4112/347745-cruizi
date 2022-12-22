@@ -76,7 +76,7 @@ const addValid = () => {
     const input = form.querySelectorAll('form input');
     const checkbox = form.querySelector('form input[name="agreement"]');
     const regExpEmail = /^(([^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/iu;
-    const regExpName = /^[a-zA-Z][a-zA-Z0-9-_\.]{1,20}$/;
+    // const regExpName = /^([А-Я]{1}[а-яё]{1,23}|[A-Z]{1}[a-z]{1,23})$/gm;
     let isValidateEmail;
     let isValidateName;
     let isValidateTel;
@@ -85,7 +85,13 @@ const addValid = () => {
 
     const validateElement = (element) => {
       if (element.name === 'name') {
-        if (!regExpName.test(element.value)) {
+        if (!/^([А-Я][а-яё-]|[A-Z][a-z-])$/gm.test(element.value) && element.value === '') {
+          element.nextElementSibling.textContent = 'Не валидное имя';
+          isValidateName = false;
+        } else if (element.value.length > 20) {
+          element.nextElementSibling.textContent = 'Не валидное имя';
+          isValidateName = false;
+        } else if (/[_\d]/.test(element.value)) {
           element.nextElementSibling.textContent = 'Не валидное имя';
           isValidateName = false;
         } else {
