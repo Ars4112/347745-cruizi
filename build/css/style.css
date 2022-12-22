@@ -333,16 +333,14 @@ template {
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url(https://fonts.gstatic.com/s/montserrat/v25/JTUSjIg1_i6t8kCHKm459W1hyzbi.woff2) format("woff2");
-  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+  src: url("../fonts/Montserrat-Regular-static.woff2") format("woff2");
 }
 @font-face {
   font-family: "Montserrat";
   font-style: normal;
   font-weight: 700;
   font-display: swap;
-  src: url(https://fonts.gstatic.com/s/montserrat/v25/JTUSjIg1_i6t8kCHKm459W1hyzbi.woff2) format("woff2");
-  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+  src: url("../fonts/Montserrat-Bold-static.woff2") format("woff2");
 }
 *,
 *::before,
@@ -891,6 +889,7 @@ h3 {
     background-image: url("../img/main-block-mobile.jpg");
     background-position: bottom;
     min-height: 500px;
+    padding: 177px 0;
   }
 }
 @media (max-width: 767px) and (-webkit-min-device-pixel-ratio: 1), (max-width: 767px) and (-o-min-device-pixel-ratio: 1/1), (max-width: 767px) and (min-resolution: 1dppx) {
@@ -1073,6 +1072,9 @@ h3 {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: start;
     gap: 20px;
   }
 }
@@ -1170,11 +1172,11 @@ h3 {
   -ms-grid-columns: (minmax(min-content, auto))[4];
   grid-template-columns: repeat(4, minmax(-webkit-min-content, auto));
   grid-template-columns: repeat(4, minmax(min-content, auto));
-  gap: 10px 30px;
+  gap: 10px 37px;
 }
 @media (max-width: 1023px) {
   .nav__list {
-    gap: 10px 23px;
+    gap: 10px 26px;
   }
 }
 @media (max-width: 767px) {
@@ -1273,7 +1275,7 @@ h3 {
   .nav__menu-mobile .nav__list {
     list-style: none;
     margin: 0;
-    padding: 0 10px;
+    padding: 5px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -1281,7 +1283,7 @@ h3 {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    gap: 28px;
+    gap: 25px;
   }
   .nav__menu-mobile .nav__logo {
     width: 42px;
@@ -1328,7 +1330,7 @@ h3 {
   position: absolute;
   top: 0;
   right: 0;
-  width: 90%;
+  width: 89%;
   height: 100vh;
   z-index: 1;
 }
@@ -1409,7 +1411,7 @@ h3 {
 }
 @media (max-width: 1023px) {
   .benefits__wrapper {
-    padding: 90px 45px;
+    padding: 90px 45px 85px;
   }
 }
 @media (max-width: 767px) {
@@ -1455,7 +1457,7 @@ h3 {
 }
 @media (max-width: 1023px) {
   .benefits__item {
-    padding: 25px 20px;
+    padding: 25px 19px;
   }
 }
 
@@ -1491,6 +1493,12 @@ h3 {
     height: 26px;
   }
 }
+@media (max-width: 767px) {
+  .benefits__logo--first {
+    width: 24px;
+    height: 27px;
+  }
+}
 
 @media (max-width: 1023px) {
   .benefits__logo--second {
@@ -1498,11 +1506,23 @@ h3 {
     height: 26px;
   }
 }
+@media (max-width: 767px) {
+  .benefits__logo--second {
+    width: 30px;
+    height: 27px;
+  }
+}
 
 @media (max-width: 1023px) {
   .benefits__logo--third {
     width: 36px;
     height: 26px;
+  }
+}
+@media (max-width: 767px) {
+  .benefits__logo--third {
+    width: 38px;
+    height: 29px;
   }
 }
 
@@ -1517,7 +1537,7 @@ h3 {
 }
 .travaling p {
   margin: 0;
-  margin-top: 30px;
+  margin-top: 27px;
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
@@ -1598,7 +1618,7 @@ h3 {
 }
 @media (max-width: 1023px) {
   .catalog__wrapper {
-    padding: 90px 60px 100px;
+    padding: 87px 60px 100px;
   }
 }
 @media (max-width: 767px) {
@@ -1626,6 +1646,8 @@ h3 {
   .catalog__list {
     -ms-grid-columns: (309px)[2];
     grid-template-columns: repeat(2, 309px);
+    margin-top: 50px;
+    gap: 34px 30px;
   }
 }
 @media (max-width: 767px) {
@@ -1633,6 +1655,7 @@ h3 {
     -ms-grid-columns: 1fr;
     grid-template-columns: 1fr;
     margin-top: 31px;
+    gap: 31px;
   }
 }
 
@@ -1654,7 +1677,7 @@ h3 {
 }
 @media (max-width: 767px) {
   .catalog__item {
-    padding: 35px 25px;
+    padding: 28px 25px 35px;
   }
 }
 
@@ -1673,9 +1696,20 @@ h3 {
   height: 272px;
   overflow-y: auto;
 }
+@media (max-width: 767px) {
+  .catalog__sub-list {
+    margin-bottom: 8px;
+    height: 273px;
+  }
+}
 
 .catalog__sub-title {
   margin-bottom: 10px;
+}
+@media (max-width: 767px) {
+  .catalog__sub-title {
+    margin-bottom: 8px;
+  }
 }
 
 .catalog__description-list {
@@ -1753,6 +1787,12 @@ h3 {
   left: 30px;
   z-index: 1;
   margin: 0;
+}
+@media (max-width: 1023px) {
+  .catalog__image-wrapper .catalog__item-title {
+    bottom: 28px;
+    left: 36px;
+  }
 }
 @media (max-width: 767px) {
   .catalog__image-wrapper .catalog__item-title {
@@ -1938,7 +1978,7 @@ h3 {
   width: 403px;
   margin: 0 auto;
   color: #f9fbfd;
-  padding: 40px 50px 50px;
+  padding: 50px 50px 50px;
 }
 @media (max-width: 1023px) {
   .form {
@@ -1981,7 +2021,7 @@ form .form__text {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  gap: 22px;
+  gap: 20px;
 }
 @media (max-width: 767px) {
   .form__list {
@@ -1999,27 +2039,33 @@ form .form__text {
   padding: 11px 16px;
   border: none;
 }
-.form__item input ::-webkit-input-placeholder {
-  color: rgba(1, 28, 64, 0.7019607843);
+.form__item input::-webkit-input-placeholder {
+  opacity: 0.5;
 }
-.form__item input ::-moz-placeholder {
-  color: rgba(1, 28, 64, 0.7019607843);
+.form__item input::-moz-placeholder {
+  opacity: 0.5;
 }
-.form__item input :-ms-input-placeholder {
-  color: rgba(1, 28, 64, 0.7019607843);
+.form__item input:-ms-input-placeholder {
+  opacity: 0.5;
 }
-.form__item input ::-ms-input-placeholder {
-  color: rgba(1, 28, 64, 0.7019607843);
+.form__item input::-ms-input-placeholder {
+  opacity: 0.5;
 }
-.form__item input ::placeholder {
-  color: rgba(1, 28, 64, 0.7019607843);
+.form__item input::placeholder {
+  opacity: 0.5;
 }
 .form__item input:hover {
   background: rgba(255, 255, 255, 0.7019607843);
 }
 
 form > label {
-  display: block;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  min-height: 24px;
   margin-top: 18px;
   padding-left: 23px;
   position: relative;
@@ -2055,9 +2101,6 @@ form > label:hover input:checked + .form__check-mark::before {
   position: absolute;
   top: 38%;
   left: 23%;
-  -webkit-transform: translate(-50%, -50%);
-      -ms-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
   -webkit-transform: scale(1.2);
       -ms-transform: scale(1.2);
           transform: scale(1.2);
@@ -2098,12 +2141,6 @@ form > label:hover input:checked + .form__check-mark::before {
   font-size: 9px;
   line-height: 13px;
 }
-@media (max-width: 767px) {
-  .form__checkbox-text {
-    display: block;
-  }
-}
-
 form button {
   font-family: "Montserrat", "Arial", sans-serif;
   font-style: normal;
@@ -2112,7 +2149,7 @@ form button {
   line-height: 21px;
   text-align: center;
   padding: 10px 0;
-  margin-top: 30px;
+  margin-top: 27px;
   background: #f9fbfd;
   border: none;
   width: 100%;
@@ -2163,7 +2200,7 @@ form button:active {
 }
 @media (max-width: 767px) {
   .contacts {
-    padding: 60px 15px;
+    padding: 60px 15px 65px;
   }
 }
 
@@ -2177,6 +2214,9 @@ form button:active {
   grid-template-columns: minmax(400px, 560px) minmax(400px, 500px);
   -ms-grid-rows: minmax(306px, auto);
   grid-template-rows: minmax(306px, auto);
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   gap: 100px;
 }
 @media (max-width: 1023px) {
@@ -2197,7 +2237,7 @@ form button:active {
     -webkit-box-direction: reverse;
         -ms-flex-direction: column-reverse;
             flex-direction: column-reverse;
-    gap: 43px;
+    gap: 37px;
   }
 }
 
@@ -2225,7 +2265,7 @@ form button:active {
 }
 @media (max-width: 1023px) {
   .contacts__text-wrapper {
-    margin-top: 64px;
+    margin-top: 67px;
   }
 }
 @media (max-width: 767px) {
@@ -2264,10 +2304,15 @@ form button:active {
 }
 
 .contacts__item {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 18px auto;
+  grid-template-columns: 18px auto;
   gap: 10px;
+}
+.contacts__item svg {
+  width: 24px;
+  margin-top: 4px;
 }
 .contacts__item:hover .contacts__icon {
   opacity: 0.8;
@@ -2281,7 +2326,7 @@ form button:active {
 }
 
 .contacts__link {
-  color: #011C40;
+  color: #011c40;
 }
 
 /* @mixin hover-focus {

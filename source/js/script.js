@@ -154,10 +154,9 @@ const addValid = () => {
       });
 
       if (!checkbox.checked) {
-
         evt.preventDefault();
       } else if (valid && isValidateName && isValidateEmail && isValidateTel) {
-        form.reset();
+        form.submit();
         form.querySelector('.form__message').textContent =
               'Форма отправлена успешно';
       } else {
@@ -233,6 +232,8 @@ const addScroll = ()=> {
   });
 };
 
-addScroll();
-addValid();
-addMask();
+window.addEventListener('DOMContentLoaded', ()=> {
+  addScroll();
+  addValid();
+  addMask();
+});
