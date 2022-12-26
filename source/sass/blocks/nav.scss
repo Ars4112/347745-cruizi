@@ -1,4 +1,6 @@
 .nav__logo {
+  position: relative;
+  top: -5px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -8,6 +10,7 @@
   @media (max-width: $vp-1024) {
     width: 38px;
     height: 20px;
+    top: 0;
   }
 
   @media (max-width: $vp-768) {
@@ -34,7 +37,7 @@
   padding: 0;
   display: grid;
   grid-template-columns: repeat(4, minmax(min-content, auto));
-  gap: 10px 37px;
+  gap: 10px 35px;
 
   @media (max-width: $vp-1024) {
     gap: 10px 26px;
