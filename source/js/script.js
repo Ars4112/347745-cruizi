@@ -32,43 +32,43 @@ if (header) {
 }
 
 const addMask = () => {
-  document.addEventListener('DOMContentLoaded', function () {
-    let eventCalllback = function (e) {
-      let el = e.target;
-      let clearVal = el.dataset.phoneClear;
-      let pattern = el.dataset.phonePattern;
-      let matrixDef = '+7(___) ___-__-__';
-      let matrix = pattern ? pattern : matrixDef;
-      let i = 0;
-      let def = matrix.replace(/\D/g, '');
-      let val = e.target.value.replace(/\D/g, '');
-      if (clearVal !== 'false' && e.type === 'blur') {
-        if (val.length < matrix.match(/([\_\d])/g).length) {
-          return;
-        }
-      }
-      if (def.length >= val.length) {
-        val = def;
-      }
-      e.target.value = matrix.replace(/./g, function (a) {
-        if (/[_\d]/.test(a) && i < val.length) {
-          return val.charAt(i++);
-        } else if (i >= val.length) {
-          return '';
-        } else {
-          return a;
-        }
-      });
-    };
-    if (form) {
-      let phoneInputs = form.querySelectorAll('input[name="tel"]');
-      for (let elem of phoneInputs) {
-        for (let ev of ['input', 'blur', 'focus']) {
-          elem.addEventListener(ev, eventCalllback);
-        }
+
+  let eventCalllback = function (e) {
+    let el = e.target;
+    let clearVal = el.dataset.phoneClear;
+    let pattern = el.dataset.phonePattern;
+    let matrixDef = '+7(___) ___-__-__';
+    let matrix = pattern ? pattern : matrixDef;
+    let i = 0;
+    let def = matrix.replace(/\D/g, '');
+    let val = e.target.value.replace(/\D/g, '');
+    if (clearVal !== 'false' && e.type === 'blur') {
+      if (val.length < matrix.match(/([\_\d])/g).length) {
+        return;
       }
     }
-  });
+    if (def.length >= val.length) {
+      val = def;
+    }
+    e.target.value = matrix.replace(/./g, function (a) {
+      if (/[_\d]/.test(a) && i < val.length) {
+        return val.charAt(i++);
+      } else if (i >= val.length) {
+        return '';
+      } else {
+        return a;
+      }
+    });
+  };
+  if (form) {
+    let phoneInputs = form.querySelectorAll('input[name="tel"]');
+    for (let elem of phoneInputs) {
+      for (let ev of ['input', 'blur', 'focus']) {
+        elem.addEventListener(ev, eventCalllback);
+      }
+    }
+  }
+
 };
 
 const addValid = () => {
@@ -76,7 +76,6 @@ const addValid = () => {
     const input = form.querySelectorAll('form input');
     const checkbox = form.querySelector('form input[name="agreement"]');
     const regExpEmail = /^(([^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/iu;
-    // const regExpName = /^([А-Я]{1}[а-яё]{1,23}|[A-Z]{1}[a-z]{1,23})$/gm;
     let isValidateEmail;
     let isValidateName;
     let isValidateTel;
@@ -85,7 +84,10 @@ const addValid = () => {
 
     const validateElement = (element) => {
       if (element.name === 'name') {
-        if (!/^([А-Я][а-яё-]|[A-Z][a-z-])$/gm.test(element.value) && element.value === '') {
+        if (element.value === '') {
+          element.nextElementSibling.textContent = 'Заполните поле';
+          isValidateName = false;
+        } else if (/^([А-Я][а-яё-]|[A-Z][a-z-])$/gm.test(element.value)) {
           element.nextElementSibling.textContent = 'Не валидное имя';
           isValidateName = false;
         } else if (element.value.length > 20) {
@@ -100,7 +102,10 @@ const addValid = () => {
         }
       }
       if (element.name === 'email') {
-        if (!regExpEmail.test(element.value)) {
+        if (element.value === '') {
+          element.nextElementSibling.textContent = 'Заполните поле';
+          isValidateEmail = false;
+        } else if (!regExpEmail.test(element.value)) {
           element.nextElementSibling.textContent = 'Не валидный email';
           isValidateEmail = false;
         } else {
@@ -109,7 +114,10 @@ const addValid = () => {
         }
       }
       if (element.name === 'tel') {
-        if (element.value.replaceAll(/\D/g, '').length < 11) {
+        if (element.value === '') {
+          element.nextElementSibling.textContent = 'Заполните поле';
+          isValidateTel = false;
+        } else if (element.value.replaceAll(/\D/g, '').length < 11) {
           element.nextElementSibling.textContent = 'Введите полный номер';
           isValidateTel = false;
         } else {
@@ -146,15 +154,6 @@ const addValid = () => {
           } else {
             element.nextElementSibling.textContent = '';
             valid = true;
-          }
-        }
-
-        if (element.name === 'tel') {
-          if (element.value === '') {
-            element.nextElementSibling.textContent =
-              'Введите номер телефона';
-          } else {
-            element.nextElementSibling.textContent = '';
           }
         }
       });

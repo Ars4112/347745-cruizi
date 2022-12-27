@@ -1130,6 +1130,7 @@ h3 {
   color: #f9fbfd;
   -ms-flex-item-align: start;
       align-self: flex-start;
+  cursor: default;
 }
 @media (max-width: 1023px) {
   .nav__logo {
@@ -1146,13 +1147,7 @@ h3 {
 }
 
 .nav__logo-link {
-  cursor: pointer;
-}
-.nav__logo-link:hover {
-  opacity: 0.8;
-}
-.nav__logo-link:active {
-  opacity: 0.5;
+  cursor: default;
 }
 
 .nav__list {
@@ -1870,8 +1865,8 @@ h3 {
   padding: 50px;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (auto)[2];
-  grid-template-columns: repeat(2, auto);
+  -ms-grid-columns: minmax(300px, 500px) auto;
+  grid-template-columns: minmax(300px, 500px) auto;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -1891,6 +1886,13 @@ h3 {
 @media (max-width: 767px) {
   .booking__wrapper {
     padding: 58px 15px 66px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     gap: 33px;
   }
 }
@@ -1984,6 +1986,9 @@ h3 {
   margin: 0 auto;
   color: #f9fbfd;
   padding: 40px 50px 50px;
+  -ms-flex-item-align: start;
+      -ms-grid-row-align: start;
+      align-self: start;
 }
 @media (max-width: 1023px) {
   .form {
@@ -1994,7 +1999,6 @@ h3 {
   .form {
     width: auto;
     padding: 35px 30px 40px;
-    max-width: 350px;
     margin: 0 auto;
   }
 }

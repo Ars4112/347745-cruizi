@@ -6,6 +6,7 @@
   align-items: center;
   color: #f9fbfd;
   align-self: flex-start;
+  cursor: default;
 
   @media (max-width: $vp-1024) {
     width: 38px;
@@ -20,15 +21,7 @@
 }
 
 .nav__logo-link {
-  cursor: pointer;
-
-  &:hover {
-    opacity: 0.8;
-  }
-
-  &:active {
-    opacity: 0.5;
-  }
+  cursor: default;
 }
 
 .nav__list {

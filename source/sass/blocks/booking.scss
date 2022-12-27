@@ -53,7 +53,8 @@
 .booking__wrapper {
   padding: 50px;
   display: grid;
-  grid-template-columns: repeat(2, auto);
+  // grid-template-columns: repeat(2, auto);
+  grid-template-columns: minmax(300px, 500px) auto;
   justify-content: center;
   align-items: center;
   gap: 144px;
@@ -66,6 +67,8 @@
 
   @media (max-width: $vp-768) {
     padding: 58px 15px 66px;
+    display: flex;
+    flex-direction: column;
     gap: 33px;
   }
 }
