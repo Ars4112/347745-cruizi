@@ -81,7 +81,6 @@ const addValid = () => {
     let isValidateTel;
     let valid;
 
-
     const validateElement = (element) => {
       if (element.name === 'name') {
         if (element.value === '') {
@@ -176,12 +175,15 @@ const addValid = () => {
 };
 const addScroll = ()=> {
   const button = document.querySelectorAll('nav a');
-  const idList = document.querySelectorAll('#benefits, #travaling, #catalog, #contacts');
 
   button.forEach((element)=> {
     element.addEventListener('click', (evt)=> {
       evt.preventDefault();
-      if (element.hash === '#benefits') {
+      const id = element.getAttribute('href');
+      const hash = id.replace('#', '');
+      const buttonId = document.getElementById(hash);
+
+      if (element.hash === id) {
         if (viewport <= 768) {
           headerNav.classList.remove('nav__menu-mobile');
           headerNav.classList.remove('nav__menu-mobile--position');
@@ -189,46 +191,7 @@ const addScroll = ()=> {
           headerButton.classList.add('visually-hidden');
           body.classList.remove('menu-open');
         }
-        idList[1].scrollIntoView({
-          block: 'start',
-          behavior: 'smooth',
-        });
-      }
-      if (element.hash === '#travaling') {
-        if (viewport <= 768) {
-          headerNav.classList.remove('nav__menu-mobile');
-          headerNav.classList.remove('nav__menu-mobile--position');
-          headerButton.classList.remove('button__close');
-          headerButton.classList.add('visually-hidden');
-          body.classList.remove('menu-open');
-        }
-        idList[0].scrollIntoView({
-          block: 'start',
-          behavior: 'smooth',
-        });
-      }
-      if (element.hash === '#catalog') {
-        if (viewport <= 768) {
-          headerNav.classList.remove('nav__menu-mobile');
-          headerNav.classList.remove('nav__menu-mobile--position');
-          headerButton.classList.remove('button__close');
-          headerButton.classList.add('visually-hidden');
-          body.classList.remove('menu-open');
-        }
-        idList[2].scrollIntoView({
-          block: 'start',
-          behavior: 'smooth',
-        });
-      }
-      if (element.hash === '#contacts') {
-        if (viewport <= 768) {
-          headerNav.classList.remove('nav__menu-mobile');
-          headerNav.classList.remove('nav__menu-mobile--position');
-          headerButton.classList.remove('button__close');
-          headerButton.classList.add('visually-hidden');
-          body.classList.remove('menu-open');
-        }
-        idList[3].scrollIntoView({
+        buttonId.scrollIntoView({
           block: 'start',
           behavior: 'smooth',
         });

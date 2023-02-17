@@ -45,7 +45,8 @@
   background: #011c40;
   box-shadow: 0 4px 35px #011c4026;
   color: #f9fbfd;
-
+  aspect-ratio: 260/386;
+  overflow: hidden;
 
   &:hover .catalog__image-wrapper {
     display: none;
@@ -79,7 +80,6 @@
 }
 
 .catalog__sub-title {
-  // margin-bottom: 10px;
 
   @media (max-width: $vp-768) {
     margin-bottom: 8px;

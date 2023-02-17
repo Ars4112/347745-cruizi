@@ -1610,6 +1610,11 @@ h3 {
       -ms-flex-pack: center;
           justify-content: center;
 }
+@media (max-width: 767px) {
+  .travaling__wrapper-text {
+    max-width: 100%;
+  }
+}
 
 .catalog__wrapper {
   padding: 87px 50px 123px;
@@ -1676,6 +1681,8 @@ h3 {
   -webkit-box-shadow: 0 4px 35px rgba(1, 28, 64, 0.1490196078);
           box-shadow: 0 4px 35px rgba(1, 28, 64, 0.1490196078);
   color: #f9fbfd;
+  aspect-ratio: 260/386;
+  overflow: hidden;
 }
 .catalog__item:hover .catalog__image-wrapper {
   display: none;
@@ -2155,6 +2162,7 @@ form > label:hover input:checked + .form__check-mark::before {
   font-size: 9px;
   line-height: 13px;
 }
+
 form button {
   font-family: "Montserrat", "Arial", sans-serif;
   font-style: normal;
